@@ -1,0 +1,690 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Partners from '../../components/home/Partners.astro';
+import { Radio, Layers, MapPin, Antenna, Network, Eye, Target, Lightbulb, Zap, ShieldCheck, Handshake, Users, Calendar, ArrowRight, Compass, BarChart3, RadioTower, Waypoints, Share2, Building2, Telescope, Gauge, Shield, Search, PencilRuler, Settings, TrendingUp, ChevronRight, ArrowLeft, GraduationCap } from 'lucide-astro';
+
+const eventos = [
+  {
+    partner: 'Net2Phone',
+    logo: '/nuestrasAlianzas/1.webp',
+    fecha: '06 de Febrero del 2026',
+    title: 'Capacitación con nuestro partner Net2Phone',
+    desc: 'Formación continua de nuestro equipo en comunicaciones empresariales y telefonía en la nube, para ofrecer soluciones de voz más robustas y escalables.',
+    image: '/assets/asset_1.jpg',
+  },
+  {
+    partner: 'Mimosa',
+    fecha: '22 y 23 de Abril del 2026',
+    title: 'Certificación Mimosa',
+    desc: 'Certificación enfocada en enlaces inalámbricos de alto desempeño, reforzando nuestra capacidad de llevar conectividad donde la fibra no llega.',
+    image: '/assets/asset_2.jpg',
+  },
+  {
+    partner: 'Triohmtec',
+    fecha: '12 y 13 de Mayo del 2026',
+    title: 'Alianza con Triohmtec',
+    desc: 'Capacitación en productos Raisecom para fortalecer nuestra oferta de infraestructura y equipamiento de red empresarial.',
+    image: '/assets/asset_3.jpg',
+  },
+];
+
+const infraestructura = [
+  { Icon: ShieldCheck, title: 'Empresa regulada y concesionaria', desc: 'Somos Concesionarios Federales de Comunicaciones, regulados por el IFT.' },
+  { Icon: Share2, title: 'Soluciones integrales', desc: 'Conectividad integrada de extremo a extremo, con alta disponibilidad y seguridad.' },
+  { Icon: MapPin, title: 'Presencia nacional', desc: 'Operamos en las 20 ciudades más importantes del país.' },
+  { Icon: RadioTower, title: '+200 torres y 30 PoP\'s', desc: 'Nodos de fibra óptica distribuidos en distintos puntos del interior de la República.' },
+  { Icon: Handshake, title: 'Operadoras Tier 1', desc: 'Alianzas con principales operadoras para garantizar conectividad confiable y de alto desempeño.' },
+  { Icon: Waypoints, title: 'Entregamos por fibra y microondas', desc: 'Tecnologías que se adaptan a las necesidades de cada proyecto para ofrecer el mejor rendimiento.' },
+];
+
+const valores = [
+  { Icon: Telescope, title: 'Visión Audaz', desc: 'Anticipamos el futuro para diseñar soluciones que impulsan el crecimiento.' },
+  { Icon: Lightbulb, title: 'Innovación Transformadora', desc: 'Convertimos ideas en tecnología que genera valor real y sostenible.' },
+  { Icon: Shield, title: 'Autonomía Responsable', desc: 'Tomamos decisiones con criterio y asumimos el impacto de nuestros resultados.' },
+  { Icon: Gauge, title: 'Agilidad decidida', desc: 'Actuamos con rapidez y enfoque para resolver lo que realmente importa.' },
+  { Icon: Users, title: 'Colaboración que suma', desc: 'Trabajamos juntos, compartimos conocimiento y logramos más.' },
+];
+
+const proceso = [
+  { num: '01', Icon: Search, color: '#4c2fd0', title: 'Entendemos lo que necesitas', desc: 'Hacemos un análisis consultivo de tu red: escuchamos tus objetivos de negocio e identificamos los retos clave para diseñar una Conectividad Inteligente hecha a tu medida.' },
+  { num: '02', Icon: PencilRuler, color: '#1e40c4', title: 'Diseñamos tu solución', desc: 'Creamos una arquitectura de red escalable que combina tecnologías avanzadas como SD-WAN, conectividad multi-nube y ciberseguridad para llevar tu operación al máximo rendimiento.' },
+  { num: '03', Icon: Settings, color: '#2ca6a4', title: 'Implementamos contigo', desc: 'Ponemos en marcha la solución de forma gestionada y optimizada, con la mínima interrupción posible y alineando tus procesos para una adopción tecnológica sin fricciones.' },
+  { num: '04', Icon: TrendingUp, color: '#78BE20', title: 'Medimos resultados', desc: 'Monitoreamos tu red 24/7 con apoyo de IA y te entregamos paneles con indicadores de rendimiento, eficiencia y ahorro para que tomes decisiones con información clara.' },
+];
+---
+
+<Layout title="Quiénes Somos - Luminet">
+  <!-- Hero -->
+  <section class="relative pt-36 pb-28 px-4 sm:px-6 lg:px-8 bg-[#0a0a1a] overflow-hidden">
+    <img src="/assets/asset_1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <!-- Degradado de izquierda (oscuro/texto) a derecha (se ve la imagen con su color) -->
+    <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,10,28,1)_0%,rgba(6,10,28,0.98)_28%,rgba(6,10,28,0.6)_55%,rgba(6,10,28,0.15)_80%,transparent_100%)]"></div>
+    <div class="absolute -bottom-24 left-0 w-[420px] h-[420px] bg-[#78BE20]/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="max-w-2xl text-left">
+        <span class="inline-flex items-center gap-2 bg-[#78BE20]/10 border border-[#78BE20]/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 bg-[#78BE20] rounded-full animate-pulse"></span>
+          <span class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.15em]">Quiénes Somos</span>
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-6">Conectividad <span class="text-[#78BE20]">Inteligente</span></h1>
+        <p class="text-white/75 text-lg leading-relaxed">
+          En Luminet damos un nuevo paso en las telecomunicaciones empresariales. Para nosotros, la conectividad va mucho más allá de un simple enlace de internet: construimos redes inteligentes, administradas desde la nube y potenciadas con IA, que se ajustan en tiempo real a lo que tu operación necesita en cada momento.
+        </p>
+        <div class="flex flex-wrap items-center gap-4 mt-9">
+        <a href="/contacto/" class="px-7 py-3.5 bg-[#78BE20] text-[#0F2E65] rounded-full text-sm font-bold hover:bg-[#6aad1a] transition-all duration-300 shadow-lg shadow-[#78BE20]/25">Contáctanos</a>
+        <a href="/#soluciones" class="px-7 py-3.5 border-2 border-white/50 text-white rounded-full text-sm font-semibold hover:bg-white/10 hover:border-white transition-all duration-300">Ver soluciones</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiénes Somos -->
+  <section class="bg-white py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Imagen -->
+      <div class="relative">
+        <div class="absolute -inset-3 bg-[#0F2E65]/5 rounded-[2.5rem] -rotate-2"></div>
+        <img src="/quienesSomos2.webp" alt="Equipo Luminet" width="800" height="600" loading="lazy" decoding="async" class="relative w-full h-[420px] object-cover rounded-[2rem] shadow-xl" />
+        <div class="absolute -top-5 -left-4 sm:left-6 bg-[#78BE20] rounded-2xl px-5 py-4 shadow-xl">
+          <p class="text-[#0F2E65] text-sm font-bold leading-tight">Conectividad<br/>Inteligente</p>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <p class="text-[#78BE20] text-xs font-semibold uppercase tracking-[0.15em] mb-2">Nuestra historia</p>
+        <h2 class="text-[#0F2E65] text-3xl md:text-4xl font-bold tracking-tight">Quiénes Somos</h2>
+        <div class="w-14 h-1 bg-[#78BE20] mt-4 mb-7 rounded-full"></div>
+        <div class="space-y-5 text-gray-600 text-base leading-relaxed">
+          <p>En Luminet desarrollamos soluciones de conectividad e infraestructura para empresas que requieren redes confiables, seguras y preparadas para crecer.</p>
+          <p>Nuestra experiencia en proyectos de telecomunicaciones nos ha permitido evolucionar hacia un modelo de <strong class="text-[#0F2E65]">conectividad inteligente</strong>, donde la infraestructura, la administración de servicios y la innovación trabajan de forma integrada.</p>
+          <p>Hoy ayudamos a organizaciones de distintos sectores a operar con mayor disponibilidad, escalabilidad y control mediante soluciones diseñadas de acuerdo con las necesidades de cada proyecto.</p>
+        </div>
+        <div class="mt-8 inline-flex items-center gap-4 rounded-2xl border border-[#78BE20]/40 bg-[#0F2E65] px-6 py-4 shadow-lg shadow-[#0F2E65]/20">
+          <img src="/Logo-pt2.webp" alt="Luminet" class="h-9 w-auto flex-shrink-0" />
+          <span class="text-white font-bold leading-tight text-lg">Soluciones<br/><span class="text-[#78BE20]">a la medida</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión y Visión -->
+  <section class="bg-[#F5F7FA] py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Encabezado -->
+      <div class="text-center mb-14">
+        <p class="text-[#78BE20] text-sm font-bold uppercase tracking-[0.2em]">Nuestro propósito</p>
+        <div class="w-10 h-1 bg-[#78BE20] mx-auto mt-3 mb-5 rounded-full"></div>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+          <span class="text-[#0F2E65]">Misión y </span><span class="text-[#78BE20]">Visión</span>
+        </h2>
+        <p class="text-gray-500 text-base md:text-lg mt-4">Lo que hacemos hoy y la dirección que guía nuestro crecimiento.</p>
+      </div>
+
+      <!-- Panel con fondo compartido -->
+      <div class="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-[#0f0a2e]/20 ring-1 ring-white/10">
+        <!-- Fondo -->
+        <img src="/MisionyVision.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[#0f0a2e]/35"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,10,46,0.25)_0%,rgba(15,10,46,0.05)_45%,rgba(15,10,46,0.55)_100%)]"></div>
+
+        <!-- Divisor central (desktop) -->
+        <div class="hidden md:block absolute inset-y-12 left-1/2 -translate-x-1/2 w-px bg-white/20"></div>
+
+        <!-- Hexágono conector (desktop) -->
+        <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-16 h-16 items-center justify-center">
+          <svg viewBox="0 0 64 64" class="w-full h-full drop-shadow-lg" fill="none">
+            <polygon points="32,3 57,17.5 57,46.5 32,61 7,46.5 7,17.5" fill="#140d33" stroke="#78BE20" stroke-width="2" />
+            <circle cx="32" cy="32" r="5" fill="#78BE20" />
+          </svg>
+        </div>
+
+        <!-- Contenido -->
+        <div class="relative z-10 grid md:grid-cols-2">
+
+          <!-- Misión -->
+          <div class="flex flex-col p-8 md:p-12 min-h-[500px]">
+            <div class="flex items-center gap-5 mb-8">
+              <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-[linear-gradient(135deg,#8fd42a,#6aad1a)] flex items-center justify-center shadow-lg shadow-[#78BE20]/30">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" class="w-8 h-8 text-white">
+                  <line x1="12" y1="12" x2="12" y2="4.5" /><line x1="12" y1="12" x2="18.6" y2="9.9" /><line x1="12" y1="12" x2="16" y2="17.8" /><line x1="12" y1="12" x2="8" y2="17.8" /><line x1="12" y1="12" x2="5.4" y2="9.9" />
+                  <circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none" />
+                  <circle cx="12" cy="4.5" r="1.7" /><circle cx="18.6" cy="9.9" r="1.7" /><circle cx="16" cy="17.8" r="1.7" /><circle cx="8" cy="17.8" r="1.7" /><circle cx="5.4" cy="9.9" r="1.7" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.15em]">Lo que hacemos</span>
+                <div class="w-8 h-0.5 bg-[#78BE20] my-2 rounded-full"></div>
+                <h3 class="text-white text-3xl md:text-4xl font-bold tracking-tight">Misión</h3>
+              </div>
+            </div>
+            <p class="text-white/75 text-base leading-relaxed max-w-md">
+              Integrar conectividad inteligente con soluciones tecnológicas que generen valor a nuestros clientes, soportada con un servicio excepcional.
+            </p>
+
+            <div class="grid grid-cols-2 mt-auto pt-8 border-t border-white/10 divide-x divide-white/10">
+              <div class="flex items-center gap-3 pr-4">
+                <span class="flex-shrink-0 w-11 h-11 rounded-full border border-[#78BE20]/50 bg-[#78BE20]/10 flex items-center justify-center">
+                  <Users class="w-5 h-5 text-[#78BE20]" />
+                </span>
+                <p class="text-white/85 text-sm font-medium leading-snug">Enfoque en<br/>nuestros clientes</p>
+              </div>
+              <div class="flex items-center gap-3 pl-4">
+                <span class="flex-shrink-0 w-11 h-11 rounded-full border border-[#8b7fff]/50 bg-[#8b7fff]/10 flex items-center justify-center">
+                  <ShieldCheck class="w-5 h-5 text-[#8b7fff]" />
+                </span>
+                <p class="text-white/85 text-sm font-medium leading-snug">Soluciones confiables<br/>y seguras</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visión -->
+          <div class="flex flex-col p-8 md:p-12 min-h-[500px]">
+            <div class="flex items-center gap-5 mb-8">
+              <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-[linear-gradient(135deg,#7c5cff,#5b3fd6)] flex items-center justify-center shadow-lg shadow-[#6d4dff]/30">
+                <Compass class="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <span class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.15em]">Hacia dónde vamos</span>
+                <div class="w-8 h-0.5 bg-[#78BE20] my-2 rounded-full"></div>
+                <h3 class="text-white text-3xl md:text-4xl font-bold tracking-tight">Visión</h3>
+              </div>
+            </div>
+            <p class="text-white/75 text-base leading-relaxed max-w-md">
+              Ser reconocidos como líder en comunicaciones y tecnologías, sumando socios de negocio en una plataforma integral que redefina la forma en la que operan las empresas.
+            </p>
+
+            <div class="grid grid-cols-2 mt-auto pt-8 border-t border-white/10 divide-x divide-white/10">
+              <div class="flex items-center gap-3 pr-4">
+                <span class="flex-shrink-0 w-11 h-11 rounded-full border border-[#78BE20]/50 bg-[#78BE20]/10 flex items-center justify-center">
+                  <BarChart3 class="w-5 h-5 text-[#78BE20]" />
+                </span>
+                <p class="text-white/85 text-sm font-medium leading-snug">Innovación que<br/>impulsa resultados</p>
+              </div>
+              <div class="flex items-center gap-3 pl-4">
+                <span class="flex-shrink-0 w-11 h-11 rounded-full border border-[#8b7fff]/50 bg-[#8b7fff]/10 flex items-center justify-center">
+                  <Handshake class="w-5 h-5 text-[#8b7fff]" />
+                </span>
+                <p class="text-white/85 text-sm font-medium leading-snug">Alianzas que<br/>generan valor</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infraestructura y cobertura -->
+  <section class="relative bg-[#F5F7FA] overflow-hidden">
+    <!-- Panel oscuro derecho con borde diagonal (desktop) — recorta el mapa y la etiqueta -->
+    <div class="hidden lg:block absolute inset-0 bg-[#060c1f] z-[1]" style="clip-path: polygon(52% 0, 100% 0, 100% 100%, 47% 100%, 51% 62%, 45% 35%)">
+      <img src="/MapaCobertura.webp" alt="Mapa de cobertura en México" class="absolute top-1/2 right-0 -translate-y-1/2 w-[50%] object-contain" />
+      <div class="absolute bottom-12 right-[6%] flex items-center gap-4">
+        <div class="w-14 h-14 rounded-full border border-[#78BE20]/30 bg-[#78BE20]/10 flex items-center justify-center flex-shrink-0">
+          <Building2 class="w-6 h-6 text-[#78BE20]" />
+        </div>
+        <div class="border-l border-white/20 pl-4">
+          <p class="text-white text-lg font-bold leading-tight">Infraestructura y cobertura</p>
+          <p class="text-[#78BE20] text-sm leading-tight mt-1">para proyectos empresariales en todo México.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Línea verde diagonal (desktop) -->
+    <svg class="hidden lg:block absolute inset-0 w-full h-full z-[2] pointer-events-none" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
+      <polyline points="52,0 45,35 51,62 47,100" stroke="#78BE20" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+    </svg>
+
+    <!-- Contenido -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 lg:py-20">
+      <div class="lg:w-[40%]">
+        <p class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.2em]">Datos que nos respaldan</p>
+        <div class="w-10 h-1 bg-[#78BE20] mt-3 mb-5 rounded-full"></div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.05] mb-4">
+          <span class="text-[#0F2E65]">Infraestructura que </span><br class="hidden sm:block" /><span class="text-[#78BE20]">impulsa tu </span><span class="text-[#0F2E65]">operación.</span>
+        </h2>
+        <p class="text-gray-500 text-sm leading-relaxed max-w-md mb-10">
+          Contamos con infraestructura propia, alianzas estratégicas y capacidades que aseguran conectividad confiable, segura y de alto desempeño.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-5 gap-y-10">
+          {infraestructura.map(({ Icon, title, desc }, i) => (
+            <div class={i % 3 === 0 ? '' : 'sm:border-l sm:border-gray-200 sm:pl-5'}>
+              <div class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center mb-4">
+                <Icon class="w-5 h-5 text-[#0F2E65]" strokeWidth={1.6} />
+              </div>
+              <h3 class="text-[#0F2E65] text-base font-bold leading-tight mb-2">{title}</h3>
+              <div class="w-7 h-0.5 bg-[#78BE20] mb-3 rounded-full"></div>
+              <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapa + etiqueta (mobile) -->
+    <div class="lg:hidden bg-[#060c1f] px-6 py-14">
+      <img src="/MapaCobertura.webp" alt="Mapa de cobertura en México" class="w-full max-w-md mx-auto object-contain" />
+      <div class="flex items-center gap-4 justify-center mt-6">
+        <div class="w-14 h-14 rounded-full border border-[#78BE20]/30 bg-[#78BE20]/10 flex items-center justify-center flex-shrink-0">
+          <Building2 class="w-6 h-6 text-[#78BE20]" />
+        </div>
+        <div>
+          <p class="text-white text-lg font-bold leading-tight">Infraestructura y cobertura</p>
+          <p class="text-[#78BE20] text-sm leading-tight mt-1">para proyectos empresariales en todo México.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestro Proceso -->
+  <section class="relative overflow-hidden bg-[#f8f9fd] py-24 px-4 sm:px-6 lg:px-8">
+    <img src="/ComoTrabajamos.webp" alt="" class="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none" />
+    <div class="relative z-10 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Cómo trabajamos</p>
+        <h2 class="text-[#0F2E65] text-3xl md:text-5xl font-bold tracking-tight">Nuestro Proceso</h2>
+        <div class="w-16 h-1 bg-[#78BE20] mx-auto mt-5 rounded-full"></div>
+        <p class="text-gray-500 text-base md:text-lg mt-6">Un proceso claro, colaborativo y enfocado en resultados.</p>
+      </div>
+
+      <div class="relative">
+        <!-- Línea conectora (desktop) -->
+        <div class="hidden lg:block absolute top-[37px] -translate-y-1/2 left-[12.5%] right-[12.5%] h-0.5 bg-[linear-gradient(90deg,#4c2fd0,#1e40c4,#2ca6a4,#78BE20)]"></div>
+        <!-- Chevrons (desktop) -->
+        {[25, 50, 75].map((left) => (
+          <div class="hidden lg:flex absolute top-[37px] -translate-x-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white shadow-md items-center justify-center" style={`left:${left}%`}>
+            <ChevronRight class="w-4 h-4 text-gray-400" />
+          </div>
+        ))}
+        <!-- Punto final (desktop) -->
+        <div class="hidden lg:block absolute top-[37px] right-[10%] -translate-y-1/2 z-20 w-3 h-3 rounded-full bg-[#78BE20]"></div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          {proceso.map(({ num, Icon, color, title, desc }) => (
+            <div class="flex flex-col items-center">
+              <!-- Nodo -->
+              <div class="relative z-10 w-[5.5rem] h-[5.5rem] flex items-center justify-center">
+                <span class="absolute inset-0 rounded-full border-2 border-dashed opacity-60" style={`border-color:${color}`}></span>
+                <span class="absolute inset-[0.35rem] rounded-full" style={`background:${color}14`}></span>
+                <span class="relative w-14 h-14 rounded-full flex items-center justify-center text-white text-lg font-extrabold" style={`background:${color}; box-shadow:0 8px 20px -6px ${color}`}>{num}</span>
+              </div>
+              <!-- Conector -->
+              <span class="w-px h-6" style={`background:linear-gradient(to bottom, ${color}, ${color}00)`}></span>
+              <!-- Tarjeta -->
+              <div class="-mt-1 bg-white rounded-2xl border border-gray-100 border-t-4 shadow-[0_12px_40px_-18px_rgba(15,46,101,0.25)] px-6 py-8 text-center w-full h-full hover:-translate-y-1.5 hover:shadow-[0_22px_55px_-18px_rgba(15,46,101,0.3)] transition-all duration-300" style={`border-top-color:${color}`}>
+                <div class="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-6" style={`background:${color}15`}>
+                  <Icon class="w-7 h-7" style={`color:${color}`} strokeWidth={2} />
+                </div>
+                <h3 class="text-[#0F2E65] font-bold text-base mb-3 uppercase tracking-wide leading-snug min-h-[2.75rem]">{title}</h3>
+                <div class="w-8 h-0.5 mx-auto mb-5 rounded-full" style={`background:${color}`}></div>
+                <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valores (interactivo) -->
+  <section id="valores" class="relative overflow-hidden bg-[#0F2E65] py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+    <!-- Fondo decorativo -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(43,89,255,0.25),transparent_55%)] pointer-events-none"></div>
+    <div class="absolute -top-24 -left-24 w-[420px] h-[420px] bg-[#2b59ff]/25 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute -bottom-32 right-0 w-[460px] h-[460px] bg-[#78BE20]/15 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0px); background-size: 40px 40px;"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <!-- Encabezado -->
+      <div class="mb-14">
+        <p class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.2em] mb-3">Lo que nos define</p>
+        <h2 class="text-white text-4xl md:text-5xl font-bold tracking-tight">Nuestros <span class="text-[#78BE20]">Valores</span></h2>
+        <div class="w-16 h-1 bg-[#78BE20] mt-5 rounded-full"></div>
+        <p class="text-white/60 text-base md:text-lg leading-relaxed mt-6 max-w-md">
+          Principios que guían nuestras decisiones y fortalecen cada solución que entregamos.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Lista de valores -->
+        <div class="flex flex-col gap-2.5" id="valores-list">
+          {valores.map(({ Icon, title, desc }, i) => (
+            <button
+              type="button"
+              data-valor={i}
+              class="valor-item group relative text-left w-full flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4 pl-6 overflow-hidden"
+            >
+              <!-- Barra indicadora -->
+              <span class="valor-bar absolute left-0 top-1/2 -translate-y-1/2 h-0 w-1 bg-[#78BE20] rounded-full"></span>
+              <span class="valor-ic w-14 h-14 flex-shrink-0 rounded-full border border-white/15 flex items-center justify-center transition-all duration-300">
+                <Icon class="w-6 h-6 text-white/70 transition-colors duration-300" />
+              </span>
+              <div class="pt-1">
+                <div class="flex items-center gap-3">
+                  <span class="valor-num text-2xl font-extrabold leading-none text-[#8b7fff] transition-colors duration-300">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 class="valor-title text-lg font-bold text-white transition-colors duration-300">{title}</h3>
+                </div>
+                <p class="text-white/55 text-sm leading-relaxed mt-1.5">{desc}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <!-- Detalle -->
+        <div class="relative lg:pl-10">
+          <div id="detalle" class="relative">
+            <div class="flex items-center gap-4 mb-6">
+              <span id="detalle-num" class="text-[#78BE20] text-3xl font-extrabold leading-none">01</span>
+              <span id="detalle-line" class="h-0.5 w-16 bg-[#78BE20] rounded-full origin-left"></span>
+            </div>
+            <h3 id="detalle-title" class="text-white text-4xl md:text-5xl font-bold tracking-tight mb-6">Visión Audaz</h3>
+            <p id="detalle-desc" class="text-white/70 text-lg leading-relaxed max-w-lg">Anticipamos el futuro para diseñar soluciones que impulsan el crecimiento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      function initValores() {
+        const items = Array.from(document.querySelectorAll('.valor-item'));
+        if (!items.length) return;
+        const detalle = document.getElementById('detalle');
+        const num = document.getElementById('detalle-num');
+        const title = document.getElementById('detalle-title');
+        const desc = document.getElementById('detalle-desc');
+        let current = -1;
+        function activate(el) {
+          const idx = Number(el.getAttribute('data-valor'));
+          if (idx === current) return;
+          current = idx;
+          items.forEach((it) => it.classList.remove('valor-active'));
+          el.classList.add('valor-active');
+          const h = el.querySelector('.valor-title').textContent;
+          const d = el.querySelector('p').textContent;
+          const n = el.querySelector('.valor-num').textContent;
+          if (num) num.textContent = n;
+          if (title) title.textContent = h;
+          if (desc) desc.textContent = d;
+          if (detalle) {
+            detalle.classList.remove('detalle-in');
+            void detalle.offsetWidth; // reinicia la animación
+            detalle.classList.add('detalle-in');
+          }
+        }
+        items.forEach((el) => {
+          el.addEventListener('click', () => activate(el));
+          el.addEventListener('mouseenter', () => activate(el));
+        });
+        activate(items[0]);
+      }
+      initValores();
+      document.addEventListener('astro:page-load', initValores);
+    })();
+  </script>
+
+  <style>
+    .valor-item {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    .valor-item:hover { transform: translateX(4px); }
+    .valor-bar { transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+
+    .valor-active {
+      border-color: rgba(120, 190, 32, 0.45);
+      background: rgba(120, 190, 32, 0.08);
+      box-shadow: 0 8px 30px -8px rgba(120, 190, 32, 0.25);
+      transform: translateX(6px);
+    }
+    .valor-active .valor-bar { height: 60%; }
+    .valor-active .valor-ic {
+      border-color: #78BE20;
+      background: rgba(120, 190, 32, 0.14);
+      box-shadow: 0 0 20px rgba(120, 190, 32, 0.35);
+      transform: scale(1.05);
+    }
+    .valor-active .valor-ic svg { color: #78BE20; }
+    .valor-active .valor-num { color: #78BE20; }
+    .valor-active .valor-title { color: #78BE20; }
+
+    /* Animación del panel de detalle */
+    .detalle-in #detalle-num { animation: valFade 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .detalle-in #detalle-line { animation: valLine 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .detalle-in #detalle-title { animation: valFade 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both; }
+    .detalle-in #detalle-desc { animation: valFade 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
+
+    @keyframes valFade {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes valLine {
+      from { transform: scaleX(0); opacity: 0; }
+      to { transform: scaleX(1); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .valor-item, .valor-bar, .valor-ic { transition: none; }
+      .detalle-in #detalle-num, .detalle-in #detalle-line, .detalle-in #detalle-title,
+      .detalle-in #detalle-desc { animation: none; }
+    }
+  </style>
+
+  <!-- Alianzas y Certificaciones -->
+  <section id="alianzas" class="relative overflow-hidden bg-[#0F2E65] py-24 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+    <!-- Fondo decorativo -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_45%,rgba(43,89,255,0.28),transparent_70%)] pointer-events-none"></div>
+    <div class="absolute top-24 left-1/4 w-[500px] h-[500px] bg-[#2b59ff]/20 rounded-full blur-[150px] pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-20 w-[460px] h-[460px] bg-[#0F2E65]/40 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-20 w-[460px] h-[460px] bg-[#78BE20]/12 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute inset-x-0 bottom-0 h-40 opacity-[0.5] pointer-events-none" style="background-image: radial-gradient(circle at 1px 1px, rgba(120,170,255,0.5) 1px, transparent 0); background-size: 22px 22px; -webkit-mask-image: linear-gradient(to top, black, transparent); mask-image: linear-gradient(to top, black, transparent);"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto text-center">
+      <!-- Badge -->
+      <span class="inline-flex items-center gap-3 border border-[#78BE20]/50 rounded-full px-6 py-2.5 mb-8">
+        <Handshake class="w-5 h-5 text-[#78BE20]" />
+        <span class="text-[#78BE20] text-sm font-bold uppercase tracking-[0.18em]">Alianzas y Certificaciones</span>
+      </span>
+
+      <!-- Título -->
+      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
+        <span class="text-white">Tecnología respaldada</span><br />
+        <span class="text-[#78BE20]">por líderes de la industria</span>
+      </h2>
+
+      <!-- Divisor -->
+      <div class="flex items-center justify-center gap-3 my-8">
+        <span class="h-0.5 w-16 rounded-full bg-gradient-to-r from-transparent to-[#78BE20]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#78BE20]"></span>
+        <span class="h-0.5 w-16 rounded-full bg-gradient-to-l from-transparent to-[#78BE20]"></span>
+      </div>
+
+      <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+        Diseñamos cada solución con tecnología de fabricantes y partners líderes en conectividad, infraestructura y ciberseguridad para ofrecer implementaciones confiables, escalables y preparadas para crecer con tu empresa.
+      </p>
+
+      <!-- Carrusel -->
+      <div class="relative mt-16">
+        <button id="al-prev" aria-label="Anterior" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 lg:-translate-x-full z-20 w-12 h-12 rounded-full border border-white/25 text-white items-center justify-center hover:bg-white/10 hover:border-white/50 transition-colors">
+          <ArrowLeft class="w-5 h-5" />
+        </button>
+        <button id="al-next" aria-label="Siguiente" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 lg:translate-x-full z-20 w-12 h-12 rounded-full border border-[#78BE20]/60 text-[#78BE20] items-center justify-center hover:bg-[#78BE20]/10 transition-colors">
+          <ArrowRight class="w-5 h-5" />
+        </button>
+
+        <div id="al-track" class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {Array.from({ length: 21 }, (_, i) => i + 1).map((n) => (
+            <div class="snap-start flex-none w-[46%] sm:w-[31%] lg:w-[184px] h-[140px] rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-sm flex items-center justify-center p-6 hover:bg-white/[0.08] hover:border-[#78BE20]/40 transition-all duration-300">
+              <img src={`/nuestrasAlianzas/${n}.webp`} alt={`Alianza ${n}`} width="200" height="120" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" style="filter: brightness(0) invert(1); opacity: 0.9;" />
+            </div>
+          ))}
+        </div>
+
+        <div id="al-dots" class="flex items-center justify-center gap-2.5 mt-10"></div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      function initAlianzas() {
+        const track = document.getElementById('al-track');
+        const dots = document.getElementById('al-dots');
+        const prev = document.getElementById('al-prev');
+        const next = document.getElementById('al-next');
+        if (!track || !dots) return;
+        function pageCount() {
+          return Math.max(1, Math.ceil(track.scrollWidth / track.clientWidth));
+        }
+        function buildDots() {
+          const n = pageCount();
+          dots.innerHTML = '';
+          for (let i = 0; i < n; i++) {
+            const b = document.createElement('button');
+            b.setAttribute('aria-label', 'Ir a página ' + (i + 1));
+            b.className = 'al-dot h-2.5 rounded-full transition-all duration-300';
+            b.addEventListener('click', () => {
+              track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+            });
+            dots.appendChild(b);
+          }
+          updateDots();
+        }
+        function updateDots() {
+          const active = Math.round(track.scrollLeft / track.clientWidth);
+          Array.from(dots.children).forEach((d, i) => {
+            if (i === active) {
+              d.style.width = '26px';
+              d.style.background = '#78BE20';
+            } else {
+              d.style.width = '10px';
+              d.style.background = 'rgba(255,255,255,0.25)';
+            }
+          });
+        }
+        prev && prev.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+        next && next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
+        track.addEventListener('scroll', updateDots, { passive: true });
+        let t;
+        window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(buildDots, 150); });
+        buildDots();
+      }
+      initAlianzas();
+      document.addEventListener('astro:page-load', initAlianzas);
+    })();
+  </script>
+
+  <!-- Alianzas en Acción -->
+  <section class="bg-[#f7f8fc] py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Encabezado -->
+      <div class="text-center mb-12">
+        <span class="inline-flex items-center gap-3 border border-[#78BE20]/40 rounded-full px-5 py-2 mb-6">
+          <span class="w-8 h-8 rounded-full bg-[#78BE20]/10 flex items-center justify-center">
+            <GraduationCap class="w-4 h-4 text-[#78BE20]" />
+          </span>
+          <span class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.18em]">Formación continua</span>
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
+          <span class="text-[#0F2E65]">Alianzas </span><span class="text-[#78BE20]">en Acción</span>
+        </h2>
+        <p class="text-gray-500 text-base md:text-lg leading-relaxed mt-5 max-w-2xl mx-auto">
+          Nuestro equipo se mantiene en formación continua con capacitaciones y certificaciones directas con nuestros partners estratégicos.
+        </p>
+        <div class="w-16 h-1 bg-[#78BE20] mx-auto mt-7 rounded-full"></div>
+      </div>
+
+      <!-- Slider -->
+      <div class="relative mt-12">
+        <button id="acc-prev" aria-label="Anterior" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 lg:-translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-gray-100 text-[#0F2E65] items-center justify-center hover:bg-gray-50 transition-colors">
+          <ArrowLeft class="w-5 h-5" />
+        </button>
+        <button id="acc-next" aria-label="Siguiente" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 lg:translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-gray-100 text-[#0F2E65] items-center justify-center hover:bg-gray-50 transition-colors">
+          <ArrowRight class="w-5 h-5" />
+        </button>
+
+        <div id="acc-track" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {eventos.map((e) => (
+            <div class="snap-start flex-none w-full px-1">
+              <div class="grid lg:grid-cols-2 bg-white rounded-3xl overflow-hidden ring-1 ring-gray-100 shadow-[0_20px_60px_-25px_rgba(15,46,101,0.3)]">
+                <!-- Imagen -->
+                <div class="relative h-64 lg:h-auto min-h-[320px] overflow-hidden">
+                  <img src={e.image} alt={e.partner} width="700" height="600" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+                  {e.logo && (
+                    <span class="absolute top-5 left-5 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg">
+                      <img src={e.logo} alt={e.partner} class="h-7 w-auto object-contain" />
+                    </span>
+                  )}
+                </div>
+                <!-- Contenido -->
+                <div class="relative p-8 lg:p-12 flex flex-col justify-center">
+                  <div class="absolute top-8 right-8 opacity-[0.06]" style="background-image: radial-gradient(circle at 2px 2px, #0F2E65 1.5px, transparent 0); background-size: 16px 16px; width: 120px; height: 80px;"></div>
+                  {e.logo
+                    ? <img src={e.logo} alt={e.partner} class="h-9 w-auto object-contain self-start mb-6" />
+                    : <p class="text-[#0F2E65] text-2xl font-extrabold mb-6">{e.partner}</p>}
+                  <h3 class="text-[#0F2E65] text-2xl md:text-3xl font-bold leading-tight mb-4">{e.title}</h3>
+                  <div class="w-12 h-0.5 bg-[#78BE20] rounded-full mb-5"></div>
+                  <span class="inline-flex items-center gap-2 text-gray-500 text-sm mb-5">
+                    <Calendar class="w-4 h-4 text-[#78BE20]" />{e.fecha}
+                  </span>
+                  <p class="text-gray-500 text-base leading-relaxed max-w-md">{e.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div id="acc-dots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center justify-center gap-4 mt-14 text-center sm:text-left">
+        <span class="hidden sm:flex w-14 h-14 rounded-full border border-[#78BE20]/30 bg-[#78BE20]/10 items-center justify-center flex-shrink-0">
+          <Users class="w-6 h-6 text-[#78BE20]" />
+        </span>
+        <div>
+          <p class="text-[#0F2E65] font-bold text-lg">¿Quieres ser nuestro partner?</p>
+          <a href="/contacto/" class="group inline-flex items-center gap-2 text-[#78BE20] font-semibold hover:gap-3 transition-all">
+            Conoce los beneficios de trabajar con nosotros
+            <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      function initAccion() {
+        const track = document.getElementById('acc-track');
+        const dots = document.getElementById('acc-dots');
+        const prev = document.getElementById('acc-prev');
+        const next = document.getElementById('acc-next');
+        if (!track || !dots) return;
+        const slides = track.children.length;
+        dots.innerHTML = '';
+        for (let i = 0; i < slides; i++) {
+          const b = document.createElement('button');
+          b.setAttribute('aria-label', 'Ir a diapositiva ' + (i + 1));
+          b.className = 'acc-dot h-2.5 rounded-full transition-all duration-300';
+          b.addEventListener('click', () => track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' }));
+          dots.appendChild(b);
+        }
+        function update() {
+          const active = Math.round(track.scrollLeft / track.clientWidth);
+          Array.from(dots.children).forEach((d, i) => {
+            d.style.width = i === active ? '26px' : '10px';
+            d.style.background = i === active ? '#78BE20' : 'rgba(15,46,101,0.2)';
+          });
+        }
+        prev && prev.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+        next && next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
+        track.addEventListener('scroll', update, { passive: true });
+        update();
+      }
+      initAccion();
+      document.addEventListener('astro:page-load', initAccion);
+    })();
+  </script>
+</Layout>

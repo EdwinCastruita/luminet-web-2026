@@ -1,0 +1,38 @@
+---
+const topRow = Array.from({ length: 15 }, (_, i) => i + 1);
+const bottomRow = Array.from({ length: 14 }, (_, i) => i + 16);
+const fadeMask = "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)";
+---
+
+<section class="bg-[#f8f9fa] py-24 overflow-hidden" aria-label="Nuestros clientes">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
+    <span class="text-[#2b59ff] text-xs font-bold uppercase tracking-[0.15em]">Nuestros Clientes</span>
+    <h2 class="text-[#000bb3] text-3xl md:text-4xl font-bold mt-2">Nuestros Clientes</h2>
+  </div>
+
+  <!-- Fila 1: izquierda → derecha -->
+  <div class="overflow-hidden py-3" style={`-webkit-mask-image:${fadeMask};mask-image:${fadeMask};`} aria-hidden="true">
+    <div class="clientes-track clientes-rtl flex flex-row flex-nowrap w-max gap-6">
+      {[...topRow, ...topRow].map((n) => (
+        <div class="flex-none w-[220px] h-[150px] bg-white flex items-center justify-center rounded-[15px] border border-[#e2e8f0] p-4 transition-shadow duration-300 hover:shadow-lg">
+          <img src={`/nuestrosClientes/${n}.webp`} alt={`Cliente ${n}`} loading="lazy" decoding="async" class="w-full h-full object-contain" />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Fila 2: derecha → izquierda -->
+  <div class="overflow-hidden py-3 mt-4" style={`-webkit-mask-image:${fadeMask};mask-image:${fadeMask};`} aria-hidden="true">
+    <div class="clientes-track clientes-ltr flex flex-row flex-nowrap w-max gap-6">
+      {[...bottomRow, ...bottomRow].map((n) => (
+        <div class="flex-none w-[220px] h-[150px] bg-white flex items-center justify-center rounded-[15px] border border-[#e2e8f0] p-4 transition-shadow duration-300 hover:shadow-lg">
+          <img src={`/nuestrosClientes/${n}.webp`} alt={`Cliente ${n}`} loading="lazy" decoding="async" class="w-full h-full object-contain" />
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <ul class="sr-only">
+    {[...topRow, ...bottomRow].map((n) => (<li>Cliente {n}</li>))}
+  </ul>
+</section>

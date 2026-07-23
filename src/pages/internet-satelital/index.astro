@@ -1,0 +1,401 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactSection from '../../components/home/ContactSection.astro';
+import { Satellite, Clock, FileText, Headphones, ShieldCheck, BadgeCheck, Settings, Activity, MapPin, Zap, CheckCircle2, Antenna } from 'lucide-astro';
+
+const titulo = 'Internet Satelital';
+const servicioSlug = 'internet-satelital';
+const tagline = 'Conectividad robusta y de alto desempeño impulsada por la constelación de satélites de órbita baja.';
+const descripcion = 'Te ofrecemos una solución de conectividad sólida y de gran rendimiento basada en la innovadora constelación de satélites de órbita baja. Perfecta para empresas, organizaciones y usuarios que necesitan un enlace confiable —ya sea como conexión principal o de respaldo— de alta velocidad en sitios remotos o donde la infraestructura terrestre es limitada.';
+
+const beneficios = [
+  { Icon: Antenna, title: 'Múltiples tecnologías de acceso' },
+  { Icon: Clock, title: 'Implementación en tiempo récord' },
+  { Icon: Headphones, title: 'Acompañamiento técnico en sitio durante el evento' },
+  { Icon: ShieldCheck, title: 'Atención y soporte disponible 24/7' },
+  { Icon: BadgeCheck, title: 'Reportes detallados de consumo' },
+  { Icon: FileText, title: 'Contratación ágil y sencilla' },
+];
+
+const diferenciadores = [
+  { title: 'Enlace confiable', desc: 'Conexión redundante que une el servicio satelital con SIM LTE para una continuidad total.' },
+  { title: 'Rapidez de instalación', desc: 'Dejamos tu servicio funcionando en menos de 3 horas tras la activación.' },
+  { title: 'Administración y control', desc: 'Incluye acceso personalizado a una plataforma para gestionar y supervisar tu servicio.' },
+  { title: 'Movilidad total', desc: 'Lo instalamos tanto en sitios fijos como en unidades móviles.' },
+];
+
+const idealPara = [
+  'Empresas que necesitan un respaldo confiable de su servicio de internet',
+  'Compañías ubicadas en zonas de difícil acceso',
+  'Operaciones temporales o por proyecto',
+  'Negocios que requieren conectividad sobre vehículos',
+  'Conciertos y espectáculos en vivo',
+  'Eventos deportivos',
+  'Ferias, entrevistas y congresos',
+];
+
+const highlights = [
+  { Icon: MapPin, title: 'Zonas remotas o de infraestructura limitada', desc: 'Llevamos conectividad allí donde las redes terrestres no alcanzan, sin importar lo aislado del lugar.' },
+  { Icon: Zap, title: 'Internet operativo de inmediato', desc: 'Activamos tu enlace en cuestión de horas para que comiences a operar sin esperas.' },
+  { Icon: Activity, title: 'Disponibilidad permanente', desc: 'Una conexión estable y siempre activa que respalda la continuidad de tu operación.' },
+];
+
+const faq = [
+  { q: '¿Cómo funciona el Internet Satelital?', a: 'Opera a través de la comunicación entre una antena instalada en tu ubicación, un satélite en órbita y una estación en tierra. La señal viaja desde tu equipo hacia el satélite, de ahí a la estación base conectada a Internet, y regresa por la misma ruta. Gracias a este proceso es posible acceder a Internet en lugares donde no existe infraestructura terrestre.' },
+  { q: '¿Qué es el Internet Satelital?', a: 'Es un tipo de conexión que se apoya en satélites ubicados en el espacio para brindar acceso a Internet. Resulta ideal para áreas rurales o de difícil acceso a donde no llegan las redes de fibra óptica o cable.' },
+  { q: '¿Cuáles son las ventajas del Internet Satelital?', a: 'Entre sus beneficios destacan la cobertura prácticamente en cualquier ubicación, una puesta en marcha rápida, la independencia respecto de las redes terrestres y su disponibilidad en zonas apartadas.' },
+  { q: '¿Cuáles son las desventajas del Internet Satelital?', a: 'Puede registrar una latencia mayor que otras tecnologías, verse afectado por las condiciones climáticas y, en ciertos casos, contar con límites de datos o velocidades más bajas en comparación con la fibra óptica.' },
+  { q: '¿Qué velocidad ofrece el Internet Satelital?', a: 'Las velocidades dependen del proveedor, pero hoy en día pueden ir desde 10 Mbps hasta más de 200 Mbps en los servicios más modernos.' },
+];
+
+const casos = [
+  { title: 'Operación en sitio remoto', desc: 'Conectividad satelital para emplazamientos sin cobertura terrestre: campamentos, proyectos industriales y zonas de difícil acceso que requieren un enlace estable.' },
+  { title: 'Continuidad de negocio', desc: 'Enlace satelital como respaldo de la conexión principal, garantizando la continuidad operativa ante cualquier contingencia o caída de la red terrestre.' },
+];
+---
+
+<Layout title={`${titulo} - Luminet`}>
+  <!-- HERO con formulario -->
+  <section class="sol-hero">
+    <img class="sol-hero-bg" src="/assets/asset_1.jpg" alt="" />
+    <div class="sol-hero-dots"></div>
+    <div class="sol-hero-glow"></div>
+    <div class="sol-hero-inner">
+      <div class="sol-hero-text">
+        <span class="eyebrow">Soluciones</span>
+        <h1>{titulo}</h1>
+        <p class="sol-tagline">{tagline}</p>
+        <p class="sol-desc">{descripcion}</p>
+        <p class="ideal-label">Ideal para:</p>
+        <ul class="ideal-list">
+          {idealPara.map((it) => (
+            <li><CheckCircle2 class="il-ic" />{it}</li>
+          ))}
+        </ul>
+        <a href="tel:8005200100" class="hero-phone">
+          <span class="hp-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </span>
+          <span class="hp-tx"><small>Llámanos</small><strong>800 520 0100</strong></span>
+        </a>
+      </div>
+
+      <div class="sol-form-card">
+        <p class="eyebrow">Empieza aquí</p>
+        <h2 class="form-title">Solicita tu propuesta</h2>
+        <p class="form-sub">Cuéntanos de tu empresa y te contactamos en menos de 24 horas.</p>
+        <form class="sol-form">
+          <div class="ff-row">
+            <input type="text" name="nombre" required aria-label="Nombre completo" placeholder="Nombre completo *" />
+            <input type="text" name="empresa" required aria-label="Empresa o giro" placeholder="Empresa o giro *" />
+          </div>
+          <div class="ff-row">
+            <input type="email" name="email" required aria-label="Correo electrónico" placeholder="Correo electrónico *" />
+            <input type="tel" name="telefono" required aria-label="Teléfono" placeholder="Teléfono *" />
+          </div>
+          <div class="ff-select">
+            <select name="servicio" required aria-label="¿Qué necesitas?">
+              <option value="" selected={servicioSlug === ""}>¿Qué necesitas? *</option>
+              <option value="internet-dedicado" selected={servicioSlug === "internet-dedicado"}>Internet Dedicado</option>
+              <option value="internet-pyme" selected={servicioSlug === "internet-pyme"}>Internet Pyme</option>
+              <option value="internet-eventos" selected={servicioSlug === "internet-eventos"}>Internet para Eventos</option>
+              <option value="internet-satelital" selected={servicioSlug === "internet-satelital"}>Internet Satelital</option>
+              <option value="alta-disponibilidad" selected={servicioSlug === "alta-disponibilidad"}>Alta Disponibilidad</option>
+              <option value="comunicaciones-unificadas" selected={servicioSlug === "comunicaciones-unificadas"}>Comunicaciones Unificadas</option>
+              <option value="red-wifi" selected={servicioSlug === "red-wifi"}>Red WiFi</option>
+              <option value="ciberseguridad" selected={servicioSlug === "ciberseguridad"}>Ciberseguridad</option>
+              <option value="servicios-tic" selected={servicioSlug === "servicios-tic"}>Servicios TIC</option>
+              <option value="sd-wan" selected={servicioSlug === "sd-wan"}>SD-WAN</option>
+              <option value="video-vigilancia" selected={servicioSlug === "video-vigilancia"}>VideoVigilancia</option>
+              <option value="data-center" selected={servicioSlug === "data-center"}>Data Centers</option>
+            </select>
+            <svg class="ff-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <textarea name="mensaje" rows="3" aria-label="Mensaje" placeholder="Cuéntanos el reto o la ubicación de tu sitio…"></textarea>
+          <button type="submit" class="form-btn">Enviar</button>
+          <p class="form-note">Tu información es confidencial.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIADORES -->
+  <section class="sol-section">
+    <div class="wrap dif-wrap">
+      <div class="dif-media">
+        <img src="/success-office.png" alt="Diferenciadores Luminet" />
+      </div>
+      <div class="dif-body">
+        <span class="eyebrow">Por qué elegirnos</span>
+        <h2 class="dif-title">Diferenciadores clave</h2>
+        <div class="dif-grid">
+        {diferenciadores.map((d, i) => (
+          <div class="dif-row">
+            <span class="dif-num">{String(i + 1).padStart(2, '0')}</span>
+            <div class="dif-tx">
+              <strong>{d.title}</strong>
+              <p>{d.desc}</p>
+            </div>
+          </div>
+        ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TU CONEXIÓN, TU NEGOCIO -->
+  <section class="sol-hl">
+    <div class="sol-hl-dots"></div>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Tu conexión, tu negocio</span>
+        <h2 class="light">Pensado para tu operación</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="hl-cards">
+        {highlights.map((h) => (
+          <div class="hl-card">
+            <div class="hl-ic"><h.Icon /></div>
+            <h3>{h.title}</h3>
+            <p>{h.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="sol-section alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Beneficios</span>
+        <h2>Lo que obtienes con Luminet</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="ben-grid">
+        {beneficios.map((b) => (
+          <div class="ben-card">
+            <div class="ben-ic"><b.Icon /></div>
+            <p>{b.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="sol-section">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <span class="eyebrow">Dudas frecuentes</span>
+        <h2>Preguntas Frecuentes</h2>
+        <div class="sec-line"></div>
+      </div>
+      <div class="faq">
+        {faq.map((item) => (
+          <details class="faq-item">
+            <summary>{item.q} <span class="plus">+</span></summary>
+            <div class="faq-answer"><p>{item.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<noscript>
+  <style>.sec-head,.ben-card,.dif-row,.hl-card,.portal-item,.faq-item,.sol-hero-text,.sol-form-card{opacity:1!important;transform:none!important;}</style>
+</noscript>
+<script>
+  function initReveal() {
+    const els = document.querySelectorAll('.sec-head, .ben-card, .dif-row, .hl-card, .portal-item, .faq-item, .sol-hero-text, .sol-form-card');
+    document.querySelectorAll('.ben-grid, .hl-cards, .dif-grid, .portal-grid, .faq').forEach((g) => {
+      Array.from(g.children).forEach((c, i) => { c.style.transitionDelay = (i * 90) + 'ms'; });
+    });
+    if (!('IntersectionObserver' in window)) { els.forEach((e) => e.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { (e.target).classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach((el) => io.observe(el));
+  }
+  initReveal();
+  document.addEventListener('astro:page-load', initReveal);
+</script>
+
+<style>
+  .eyebrow {
+    display: inline-block; color: #78BE20; font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1rem;
+  }
+
+  /* HERO */
+  .sol-hero {
+    position: relative; margin-top: 80px; padding: 5.5rem 1.5rem 6rem;
+    background: linear-gradient(135deg, #0a1230 0%, #0F2E65 42%, #0a2a63 62%, #0a1230 100%);
+    background-size: 230% 230%; animation: solHeroBg 20s ease-in-out infinite;
+    overflow: hidden; color: #fff;
+  }
+  @keyframes solHeroBg { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+  .sol-hero-dots {
+    position: absolute; inset: 0; opacity: 0.05;
+    background-image: radial-gradient(circle at 2px 2px, #fff 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  .sol-hero-glow {
+    position: absolute; right: -140px; top: -160px; width: 500px; height: 500px;
+    border-radius: 50%; background: rgba(120,190,32,0.16); filter: blur(130px); pointer-events: none;
+    animation: solGlow 16s ease-in-out infinite;
+  }
+  @keyframes solGlow { 0%, 100% { transform: translate(0,0) scale(1); opacity: 0.85; } 50% { transform: translate(-50px, 60px) scale(1.18); opacity: 1; } }
+  .sol-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.18; pointer-events: none; }
+  .sol-hero-inner {
+    position: relative; z-index: 1; max-width: 72rem; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 430px; gap: 4rem; align-items: center;
+  }
+  .sol-hero-text h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin: 0; }
+  .sol-tagline { color: #78BE20; font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 600; margin: 1.1rem 0 1rem; }
+  .sol-desc { color: rgba(255,255,255,0.72); font-size: 1.02rem; line-height: 1.75; max-width: 34rem; }
+  .ideal-label { color: #fff; font-weight: 700; margin: 2rem 0 1rem; font-size: 0.92rem; letter-spacing: 0.01em; }
+  .ideal-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; }
+  .ideal-list li { display: flex; align-items: center; gap: 0.65rem; color: rgba(255,255,255,0.82); font-size: 0.92rem; }
+  .il-ic { width: 1.1rem; height: 1.1rem; color: #78BE20; flex-shrink: 0; }
+  .hero-phone {
+    display: inline-flex; align-items: center; gap: 0.9rem; margin-top: 2.25rem;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+    padding: 0.7rem 1.6rem 0.7rem 0.7rem; border-radius: 9999px; text-decoration: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .hero-phone:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); }
+  .hp-ic {
+    width: 46px; height: 46px; border-radius: 50%; background: #78BE20; color: #0F2E65;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .hp-ic svg { width: 1.25rem; height: 1.25rem; }
+  .hp-tx { display: flex; flex-direction: column; line-height: 1.2; }
+  .hp-tx small { color: rgba(255,255,255,0.6); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; }
+  .hp-tx strong { color: #fff; font-size: 1.18rem; }
+
+  /* FORM CARD */
+  .sol-form-card {
+    background: #fff; border-radius: 24px; padding: 2.25rem; box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+  }
+  .sol-form-card .eyebrow { margin-bottom: 0.6rem; }
+  .form-title { color: #0F2E65; font-size: 1.65rem; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 0.4rem; }
+  .form-sub { color: #64748b; font-size: 0.88rem; margin: 0 0 1.6rem; line-height: 1.55; }
+  .sol-form { display: flex; flex-direction: column; gap: 0.9rem; }
+  .ff-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  .sol-form input, .sol-form select, .sol-form textarea {
+    width: 100%; background: #F8FAFC; border: 1px solid #e2e8f0; border-radius: 12px;
+    padding: 0.85rem 0.95rem; font-size: 0.88rem; color: #1f2937; font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .sol-form input::placeholder, .sol-form textarea::placeholder { color: #94a3b8; }
+  .sol-form input:focus, .sol-form select:focus, .sol-form textarea:focus {
+    outline: none; border-color: #78BE20; background: #fff; box-shadow: 0 0 0 3px rgba(120,190,32,0.15);
+  }
+  .sol-form textarea { resize: none; }
+  .ff-select { position: relative; }
+  .ff-select select { appearance: none; cursor: pointer; padding-right: 2.25rem; color: #475569; }
+  .ff-chev { position: absolute; right: 0.9rem; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; color: #94a3b8; pointer-events: none; }
+  .form-btn {
+    margin-top: 0.5rem; background: #0F2E65; color: #fff; border: 0; cursor: pointer;
+    padding: 1rem; border-radius: 9999px; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.01em;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .form-btn:hover { background: #0a1f45; transform: translateY(-1px); }
+  .form-note { text-align: center; color: #94a3b8; font-size: 0.72rem; margin: 0; }
+
+  /* SECTIONS */
+  .sol-section { padding: 6.5rem 1.5rem; }
+  .sol-section.alt { background: #F7F9FC; }
+  .wrap { max-width: 72rem; margin: 0 auto; }
+  .wrap.narrow { max-width: 48rem; }
+  .sec-head { text-align: center; margin-bottom: 3.75rem; }
+  .sec-head h2 { color: #0F2E65; font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.02em; margin: 0; }
+  .sec-head h2.light { color: #fff; }
+  .sec-line { width: 56px; height: 4px; background: #78BE20; border-radius: 999px; margin: 1.25rem auto 0; }
+
+  /* DIFERENCIADORES */
+  .dif-wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3.5rem; align-items: center; }
+  .dif-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; box-shadow: 0 24px 50px rgba(15,46,101,0.18); }
+  .dif-title { color: #0F2E65; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; margin: 0.5rem 0 2rem; }
+  .dif-grid { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+  .dif-row { display: flex; gap: 1.35rem; align-items: flex-start; }
+  .dif-num { color: #78BE20; font-size: 2.1rem; font-weight: 800; line-height: 1; flex-shrink: 0; opacity: 0.9; }
+  .dif-tx strong { display: block; color: #0F2E65; font-size: 1.18rem; margin-bottom: 0.5rem; }
+  .dif-tx p { color: #5a6478; font-size: 0.94rem; line-height: 1.65; margin: 0; }
+
+  /* TU CONEXIÓN (dark) */
+  .sol-hl {
+    position: relative; padding: 6.5rem 1.5rem; overflow: hidden;
+    background: linear-gradient(135deg, #0a1230 0%, #0F2E65 60%, #0a1230 100%);
+  }
+  .sol-hl-dots {
+    position: absolute; inset: 0; opacity: 0.05;
+    background-image: radial-gradient(circle at 2px 2px, #fff 1px, transparent 0); background-size: 40px 40px;
+  }
+  .sol-hl .wrap { position: relative; z-index: 1; }
+  .hl-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+  .hl-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 22px;
+    padding: 2.5rem 2rem; text-align: center; transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  }
+  .hl-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(120,190,32,0.3); transform: translateY(-5px); }
+  .hl-ic {
+    width: 62px; height: 62px; margin: 0 auto 1.4rem; border-radius: 18px;
+    background: rgba(120,190,32,0.15); color: #78BE20; display: flex; align-items: center; justify-content: center;
+  }
+  .hl-ic :global(svg) { width: 1.9rem; height: 1.9rem; }
+  .hl-card h3 { color: #fff; font-size: 1.22rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .hl-card p { color: rgba(255,255,255,0.68); font-size: 0.9rem; line-height: 1.65; margin: 0; }
+
+  /* BENEFICIOS (filas con icono, 2 columnas, compacto) */
+  .ben-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem 2.5rem; max-width: 58rem; margin: 0 auto; }
+  .ben-card { display: flex; flex-direction: row; align-items: center; gap: 1rem; background: none; }
+  .ben-ic {
+    width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(120,190,32,0.12); color: #78BE20; display: flex; align-items: center; justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .ben-ic :global(svg) { width: 1.4rem; height: 1.4rem; }
+  .ben-card:hover .ben-ic { background: #78BE20; color: #fff; }
+  .ben-card p { color: #0F2E65; font-weight: 600; font-size: 0.95rem; line-height: 1.4; margin: 0; }
+
+  /* FAQ */
+  .faq { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1.5rem 0; }
+  .faq-item summary {
+    list-style: none; cursor: pointer; font-weight: 700; color: #0F2E65; font-size: 1.08rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item .plus { color: #78BE20; font-size: 1.6rem; line-height: 1; transition: transform 0.3s ease; flex-shrink: 0; }
+  .faq-item[open] .plus { transform: rotate(45deg); }
+  .faq-answer { padding-top: 1rem; color: #4a5568; line-height: 1.75; }
+
+  @media (max-width: 900px) {
+    .sol-hero { padding: 3.5rem 1.25rem 4rem; }
+    .sol-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .sol-section, .sol-hl { padding: 4.5rem 1.25rem; }
+    .dif-grid, .ben-grid { grid-template-columns: 1fr; }
+    .dif-grid { gap: 2rem; }
+    .dif-wrap { grid-template-columns: 1fr; }
+    .dif-media { display: none; }
+  }
+  @media (max-width: 520px) {
+    .ff-row { grid-template-columns: 1fr; }
+  }
+
+  /* Scroll reveal */
+  .sec-head, .ben-card, .dif-row, .hl-card, .portal-item, .faq-item, .sol-hero-text, .sol-form-card {
+    opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .sol-hero-text { transform: translateX(-30px); }
+  .sol-form-card { transform: translateY(40px) scale(0.97); }
+  .sec-head.in, .ben-card.in, .dif-row.in, .hl-card.in, .portal-item.in, .faq-item.in, .sol-hero-text.in, .sol-form-card.in {
+    opacity: 1; transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sec-head, .ben-card, .dif-row, .hl-card, .portal-item, .faq-item, .sol-hero-text, .sol-form-card { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+</style>

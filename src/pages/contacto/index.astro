@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Phone, Mail, MapPin, Clock, User, Building2, MessageSquare, ChevronDown, Send, Plus, Award, Gauge, Headset } from 'lucide-astro';
+
+const stats = [
+  { Icon: MapPin, value: 'Nacional', label: 'Cobertura en México' },
+  { Icon: Gauge, value: '99.97%', label: 'Disponibilidad garantizada' },
+  { Icon: Headset, value: '24/7', label: 'Monitoreo continuo (NOC)' },
+];
+
+const servicios = [
+  'Internet Dedicado',
+  'Internet Pyme',
+  'Internet para Eventos',
+  'Internet Satelital',
+  'Alta Disponibilidad',
+  'Comunicaciones Unificadas',
+  'Red WiFi',
+  'Ciberseguridad',
+  'Servicios TIC',
+  'SD-WAN',
+  'Video Vigilancia',
+  'Data Centers',
+];
+
+const faqs = [
+  {
+    q: '¿Cómo puedo solicitar una cotización formal para mi empresa?',
+    a: 'Es muy sencillo. Puede completar el formulario de esta sección o contactarnos vía WhatsApp. Para brindarle una propuesta precisa y personalizada, le sugerimos tener a la mano la ubicación de su empresa (coordenadas o dirección) y los requerimientos de ancho de banda necesarios para su operación. Uno de nuestros consultores TIC se pondrá en contacto con usted en menos de 24 horas.',
+  },
+  {
+    q: '¿Tienen cobertura en mi zona o ciudad?',
+    a: 'Luminet cuenta con una amplia infraestructura de red propia en diversas regiones de México. Si su empresa se encuentra en una zona remota o de difícil acceso, nuestra tecnología de microondas o internet satelital nos permite llevar conectividad donde otros proveedores no llegan. Contáctenos para confirmar la disponibilidad en su ubicación.',
+  },
+  {
+    q: 'Ya soy cliente, ¿cuál es el canal para reportar una falla técnica?',
+    a: 'Para garantizar una respuesta inmediata, nuestros clientes cuentan con acceso directo al Centro de Operaciones de Red (NOC) disponible 24/7. Puede realizar su reporte a través de nuestro portal de clientes o llamando a nuestra línea exclusiva de soporte técnico, donde un ingeniero especializado le brindará asistencia personalizada sin pasar por filtros de atención general.',
+  },
+  {
+    q: '¿Pueden realizar una visita técnica antes de la contratación?',
+    a: 'Sí. Como parte de nuestro Servicio de Consultoría, realizamos levantamientos técnicos y estudios de factibilidad en sitio para asegurar que la solución propuesta (ya sea WiFi a la medida, videovigilancia o enlace dedicado) se adapte perfectamente a las condiciones físicas y requerimientos de su infraestructura.',
+  },
+  {
+    q: '¿Qué métodos de pago y facturación manejan?',
+    a: 'Ofrecemos flexibilidad en la gestión administrativa. Aceptamos transferencias electrónicas y pagos domiciliados. Todas nuestras soluciones son 100% deducibles y podrá descargar sus facturas fiscales (CFDI) de forma inmediata desde nuestro portal de autogestión de clientes.',
+  },
+  {
+    q: '¿Ofrecen servicios adicionales además de la conectividad?',
+    a: 'Sí. Además de la conectividad, diseñamos e implementamos servicios administrados, ciberseguridad, comunicaciones unificadas, redes WiFi, videovigilancia, Data Center y proyectos especiales a la medida de las necesidades de su empresa.',
+  },
+];
+---
+
+<Layout title="Contacto - Luminet">
+  <!-- Hero -->
+  <section class="relative pt-28 pb-28 px-4 sm:px-6 lg:px-8 bg-[#0a0a1a] overflow-hidden">
+    <img src="/ContactoHero.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,18,48,0.6)_0%,rgba(15,46,101,0.45)_55%,rgba(10,18,48,0.6)_100%)]"></div>
+    <div class="absolute -top-24 -left-24 w-[420px] h-[420px] bg-[#2b59ff]/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute -bottom-24 right-0 w-[420px] h-[420px] bg-[#78BE20]/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0px); background-size: 38px 38px;"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <span class="inline-flex items-center gap-2 bg-[#78BE20]/10 border border-[#78BE20]/30 rounded-full px-4 py-1.5 mb-6">
+        <span class="w-2 h-2 bg-[#78BE20] rounded-full animate-pulse"></span>
+        <span class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.15em]">Contacto</span>
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] mb-5">Conecta con <span class="text-[#78BE20]">Luminet</span></h1>
+      <p class="text-white/75 text-lg max-w-2xl mx-auto leading-relaxed">
+        Nuestros consultores expertos están listos para diseñar la solución de conectividad que tu empresa necesita.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contacto + Formulario -->
+  <section class="bg-[#F5F7FA] py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-12 items-start">
+
+      <!-- Info de contacto -->
+      <div class="lg:col-span-2 space-y-6">
+        <div>
+          <p class="text-[#78BE20] text-xs font-semibold uppercase tracking-[0.15em] mb-2">Información</p>
+          <h2 class="text-[#0F2E65] text-2xl font-bold tracking-tight">Estamos para ayudarte</h2>
+        </div>
+
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-[#0F2E65] flex items-center justify-center flex-shrink-0">
+            <MapPin class="w-5 h-5 text-[#78BE20]" />
+          </div>
+          <div>
+            <p class="text-[#0F2E65] font-bold text-sm mb-1">Oficinas</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Av. Nazario Ortiz No. 2060, local 319-A, Plaza Santa Isabel, Col. Tanque de Peña, CP 25270, Saltillo, Coahuila.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-[#0F2E65] flex items-center justify-center flex-shrink-0">
+            <Clock class="w-5 h-5 text-[#78BE20]" />
+          </div>
+          <div>
+            <p class="text-[#0F2E65] font-bold text-sm mb-1">Horario</p>
+            <p class="text-gray-500 text-sm">Lunes a Viernes, 9:00 a 19:00 hrs.</p>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="tel:8005200100" class="flex items-center gap-3 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-11 h-11 rounded-xl bg-[#0F2E65] flex items-center justify-center flex-shrink-0">
+              <Phone class="w-5 h-5 text-[#78BE20]" />
+            </div>
+            <div>
+              <p class="text-[#0F2E65] font-bold text-sm">Teléfono</p>
+              <p class="text-gray-500 text-sm">800 520 0100</p>
+            </div>
+          </a>
+          <a href="mailto:contacto@luminet.com.mx" class="flex items-center gap-3 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-11 h-11 rounded-xl bg-[#0F2E65] flex items-center justify-center flex-shrink-0">
+              <Mail class="w-5 h-5 text-[#78BE20]" />
+            </div>
+            <div>
+              <p class="text-[#0F2E65] font-bold text-sm">Email</p>
+              <p class="text-gray-500 text-sm break-all">contacto@luminet.com.mx</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="bg-[#0F2E65] rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <p class="text-white font-bold text-sm">Síguenos</p>
+            <p class="text-white/50 text-xs mt-0.5">Conéctate con nosotros en redes</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="https://www.facebook.com/Luminetmx" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-11 h-11 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-sm hover:scale-110 hover:shadow-md transition-all duration-300">
+              <img src="/red3.webp" alt="Facebook" class="w-full h-full object-contain" />
+            </a>
+            <a href="https://www.instagram.com/luminet_mx" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-11 h-11 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-sm hover:scale-110 hover:shadow-md transition-all duration-300">
+              <img src="/red1.webp" alt="Instagram" class="w-full h-full object-contain" />
+            </a>
+            <a href="https://www.linkedin.com/company/luminetmx" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-sm hover:scale-110 hover:shadow-md transition-all duration-300">
+              <img src="/red2.webp" alt="LinkedIn" class="w-full h-full object-contain" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="lg:col-span-3 bg-white rounded-3xl p-8 md:p-10 shadow-lg">
+        <p class="text-[#78BE20] text-xs font-semibold uppercase tracking-[0.15em] mb-2">Empieza aquí</p>
+        <h2 class="text-[#0F2E65] text-2xl md:text-3xl font-bold tracking-tight mb-2">Solicita tu propuesta</h2>
+        <p class="text-gray-500 text-sm mb-8">Cuéntanos de tu empresa y te contactamos en menos de 24 horas.</p>
+
+        <form class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="relative">
+              <User class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="text" name="nombre" aria-label="Nombre completo" placeholder="Nombre completo *" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+            <div class="relative">
+              <Building2 class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="text" name="empresa" aria-label="Empresa" placeholder="Empresa *" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="relative">
+              <Mail class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="email" name="email" aria-label="Correo electrónico" placeholder="Correo electrónico *" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+            <div class="relative">
+              <Phone class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="tel" name="telefono" aria-label="Teléfono" placeholder="Teléfono *" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+          </div>
+          <div class="relative">
+            <select required name="servicio" aria-label="Solución de interés" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all appearance-none cursor-pointer pr-10">
+              <option value="">Solución de interés *</option>
+              {servicios.map((s) => <option value={s}>{s}</option>)}
+            </select>
+            <ChevronDown class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+          </div>
+          <div class="relative">
+            <MessageSquare class="absolute left-3 top-3.5 w-4 h-4 text-[#78BE20]" />
+            <textarea name="mensaje" rows="4" aria-label="Mensaje" placeholder="Mensaje" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400 resize-none"></textarea>
+          </div>
+          <button type="submit" class="group w-full inline-flex items-center justify-center gap-2 bg-[#0F2E65] text-white px-6 py-4 rounded-full text-sm font-bold hover:bg-[#0a1f45] hover:shadow-lg transition-all duration-300">
+            ENVIAR
+            <Send class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+          <p class="text-gray-400 text-xs text-center">Tu información es confidencial.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-[#78BE20] text-xs font-semibold uppercase tracking-[0.15em] mb-2">Preguntas Frecuentes</p>
+        <h2 class="text-[#0F2E65] text-3xl md:text-4xl font-bold tracking-tight">Resolvemos tus dudas</h2>
+        <div class="w-16 h-1 bg-[#78BE20] mx-auto mt-5 rounded-full"></div>
+      </div>
+
+      <div class="space-y-4" data-faq>
+        {faqs.map((f) => (
+          <div class="border border-gray-200 rounded-2xl overflow-hidden bg-[#F8FAFC]">
+            <button type="button" data-faq-btn class="flex items-center justify-between w-full text-left px-6 py-5 gap-4 cursor-pointer">
+              <span class="text-[#0F2E65] font-semibold text-base">{f.q}</span>
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#0F2E65] flex items-center justify-center transition-transform duration-300" data-faq-icon>
+                <Plus class="w-4 h-4 text-white" />
+              </span>
+            </button>
+            <div class="hidden px-6 pb-5" data-faq-panel>
+              <p class="text-gray-600 text-sm leading-relaxed">{f.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function initFaq() {
+    document.querySelectorAll('[data-faq] [data-faq-btn]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const panel = btn.nextElementSibling;
+        const icon = btn.querySelector('[data-faq-icon]');
+        if (!panel) return;
+        const hidden = panel.classList.contains('hidden');
+        panel.classList.toggle('hidden', !hidden);
+        icon?.classList.toggle('rotate-45', hidden);
+      });
+    });
+  }
+  initFaq();
+  document.addEventListener('astro:page-load', initFaq);
+</script>

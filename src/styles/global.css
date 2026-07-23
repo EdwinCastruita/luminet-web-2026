@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Carrusel de clientes */
+@keyframes clientes-scroll-rtl {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+@keyframes clientes-scroll-ltr {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.clientes-track { will-change: transform; }
+.clientes-rtl { animation: clientes-scroll-rtl 60s linear infinite; }
+.clientes-ltr { animation: clientes-scroll-ltr 60s linear infinite; }
+.clientes-rtl:hover,
+.clientes-ltr:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .clientes-rtl,
+  .clientes-ltr { animation: none !important; }
+}
+@media (max-width: 640px) {
+  .clientes-rtl,
+  .clientes-ltr { animation-duration: 45s; }
+}
+
+/* Carrusel de alianzas (reusa los mismos keyframes) */
+.alianzas-track { will-change: transform; }
+.alianzas-rtl { animation: clientes-scroll-rtl 50s linear infinite; }
+.alianzas-ltr { animation: clientes-scroll-ltr 50s linear infinite; }
+.alianzas-rtl:hover,
+.alianzas-ltr:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .alianzas-rtl,
+  .alianzas-ltr { animation: none !important; }
+}
+@media (max-width: 640px) {
+  .alianzas-rtl,
+  .alianzas-ltr { animation-duration: 38s; }
+}

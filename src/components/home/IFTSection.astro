@@ -1,0 +1,61 @@
+---
+import { ShieldCheck, RadioTower } from 'lucide-astro';
+---
+
+<section id="ift" class="bg-white py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
+      <!-- Texto izquierdo -->
+      <div class="text-center md:text-right">
+        <p class="text-[#0F2E65] text-base md:text-lg font-semibold leading-snug">
+          Empresa regulada y concesionada por el IFT
+        </p>
+        <div class="h-[3px] w-20 bg-[#78BE20] rounded-full mt-3 mx-auto md:ml-auto md:mr-0"></div>
+      </div>
+
+      <!-- Logo IFT -->
+      <div class="flex justify-center">
+        <div class="ift-logo-wrap relative bg-white rounded-2xl shadow-[0_10px_40px_rgba(15,46,101,0.08)] border border-gray-100 p-6 md:p-8 transition-all duration-500">
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#78BE20]/5 to-transparent pointer-events-none"></div>
+          <img
+            src="/ift.webp"
+            alt="Instituto Federal de Telecomunicaciones"
+            width="220"
+            height="220"
+            loading="lazy"
+            decoding="async"
+            class="relative z-10 w-40 md:w-52 h-auto object-contain"
+          />
+        </div>
+      </div>
+
+      <!-- Texto derecho -->
+      <div class="text-center md:text-left">
+        <p class="text-[#0F2E65] text-base md:text-lg font-semibold leading-snug">
+          Trayectoria consolidada en la provisión de infraestructura y servicios de radiofrecuencia.
+        </p>
+        <div class="h-[3px] w-20 bg-[#78BE20] rounded-full mt-3 mx-auto md:mr-auto md:ml-0"></div>
+      </div>
+    </div>
+
+    <!-- Badges abajo -->
+    <div class="mt-10 flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-sm text-[#4a5568]">
+      <div class="flex items-center gap-2">
+        <ShieldCheck class="w-4 h-4 text-[#78BE20]" />
+        <span class="font-medium">Regulación Federal</span>
+      </div>
+      <span class="w-1 h-1 rounded-full bg-[#cbd5e0] hidden sm:block"></span>
+      <div class="flex items-center gap-2">
+        <RadioTower class="w-4 h-4 text-[#78BE20]" />
+        <span class="font-medium">Radiofrecuencia Autorizada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ift-logo-wrap:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 50px rgba(15, 46, 101, 0.12);
+  }
+</style>

@@ -1,0 +1,318 @@
+---
+// Cookie consent banner — vanilla JS, sin dependencias externas.
+const PRIVACY_URL = "#";
+---
+
+<div
+  id="cookie-consent"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="cc-title"
+  aria-describedby="cc-desc"
+  class="cc-root"
+  hidden
+>
+  <!-- Vista principal -->
+  <div class="cc-view" data-view="main">
+    <div class="cc-head">
+      <span class="cc-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5Z" />
+          <path d="M8.5 8.5v.01" /><path d="M16 15.5v.01" /><path d="M12 12v.01" /><path d="M11 17v.01" /><path d="M7 14v.01" />
+        </svg>
+      </span>
+      <h2 id="cc-title" class="cc-heading">Preferencias de cookies</h2>
+    </div>
+    <p id="cc-desc" class="cc-text">
+      Usamos cookies para asegurar el funcionamiento del sitio y, con tu permiso, para medir
+      el uso y personalizar contenido. Puedes aceptar todas, rechazar las opcionales o
+      configurar tus preferencias.
+    </p>
+    <div class="cc-actions">
+      <button type="button" class="cc-btn cc-btn-primary" data-cc-action="accept-all">Aceptar todas</button>
+      <button type="button" class="cc-btn cc-btn-ghost" data-cc-action="reject">Rechazar opcionales</button>
+    </div>
+    <div class="cc-links">
+      <button type="button" class="cc-link" data-cc-action="customize">Personalizar preferencias</button>
+      <a class="cc-link" href={PRIVACY_URL}>Política de privacidad</a>
+    </div>
+  </div>
+
+  <!-- Panel de personalización -->
+  <div class="cc-view" data-view="settings" hidden>
+    <div class="cc-head">
+      <span class="cc-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5Z" />
+          <path d="M8.5 8.5v.01" /><path d="M16 15.5v.01" /><path d="M12 12v.01" /><path d="M11 17v.01" /><path d="M7 14v.01" />
+        </svg>
+      </span>
+      <h2 class="cc-heading">Personaliza tus cookies</h2>
+    </div>
+
+    <div class="cc-list">
+      <div class="cc-item">
+        <div class="cc-item-info">
+          <p class="cc-item-title">Esenciales / Técnicas</p>
+          <p class="cc-item-desc">Necesarias para navegación segura, protección de formularios (CSRF) y guardar tu consentimiento. Siempre activas.</p>
+        </div>
+        <label class="cc-switch">
+          <input type="checkbox" checked disabled data-cc-category="necessary" aria-label="Cookies esenciales (siempre activas)" />
+          <span class="cc-slider"></span>
+        </label>
+      </div>
+
+      <div class="cc-item">
+        <div class="cc-item-info">
+          <p class="cc-item-title">Preferencias y Funcionales</p>
+          <p class="cc-item-desc">Recuerdan idioma, tema y región para mejorar tu experiencia.</p>
+        </div>
+        <label class="cc-switch">
+          <input type="checkbox" data-cc-category="preferences" aria-label="Cookies de preferencias" />
+          <span class="cc-slider"></span>
+        </label>
+      </div>
+
+      <div class="cc-item">
+        <div class="cc-item-info">
+          <p class="cc-item-title">Medición y Analíticas</p>
+          <p class="cc-item-desc">Google Analytics (_ga, _gid, _ga_*) para entender el uso del sitio.</p>
+        </div>
+        <label class="cc-switch">
+          <input type="checkbox" data-cc-category="analytics" aria-label="Cookies analíticas" />
+          <span class="cc-slider"></span>
+        </label>
+      </div>
+
+      <div class="cc-item">
+        <div class="cc-item-info">
+          <p class="cc-item-title">Publicidad y Marketing</p>
+          <p class="cc-item-desc">Google Ads (_gcl_au) y Meta/Facebook Pixel (_fbp, _fbc) para anuncios relevantes.</p>
+        </div>
+        <label class="cc-switch">
+          <input type="checkbox" data-cc-category="marketing" aria-label="Cookies de marketing" />
+          <span class="cc-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="cc-actions">
+      <button type="button" class="cc-btn cc-btn-primary" data-cc-action="save">Guardar selección</button>
+      <button type="button" class="cc-btn cc-btn-ghost" data-cc-action="back">Atrás</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cc-root {
+    --cc-accent: #78BE20;
+    --cc-accent-ink: #0F2E65;
+    position: fixed;
+    z-index: 9999;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    left: auto;
+    width: min(512px, calc(100vw - 2.5rem));
+    max-height: calc(100vh - 2.5rem);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background: rgba(15, 46, 101, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(120, 190, 32, 0.25);
+    box-shadow: 0 24px 60px -12px rgba(15, 46, 101, 0.55);
+    color: #fff;
+    font-family: 'Inter', system-ui, sans-serif;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 500ms ease, transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cc-root.cc-visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 640px) {
+    .cc-root {
+      right: 0.75rem;
+      left: 0.75rem;
+      bottom: 0.75rem;
+      width: auto;
+      padding: 1.25rem;
+    }
+  }
+
+  .cc-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+  .cc-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0;
+    background: color-mix(in srgb, var(--cc-accent) 22%, transparent);
+    color: var(--cc-accent);
+  }
+  .cc-heading { font-size: 1.05rem; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+  .cc-text { font-size: 0.85rem; line-height: 1.55; color: rgba(255, 255, 255, 0.72); margin: 0 0 1.25rem; }
+
+  .cc-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .cc-btn {
+    flex: 1 1 auto; min-width: 140px; cursor: pointer;
+    padding: 0.7rem 1rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 700;
+    border: 1px solid transparent; transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .cc-btn:hover { transform: translateY(-1px); }
+  .cc-btn-primary { background: var(--cc-accent); color: var(--cc-accent-ink); }
+  .cc-btn-primary:hover { background: #6aad1a; }
+  .cc-btn-ghost { background: rgba(255, 255, 255, 0.08); color: #fff; border-color: rgba(255, 255, 255, 0.16); }
+  .cc-btn-ghost:hover { background: rgba(255, 255, 255, 0.14); }
+
+  .cc-links { display: flex; gap: 1.25rem; margin-top: 1rem; flex-wrap: wrap; }
+  .cc-link {
+    background: none; border: none; padding: 0; cursor: pointer;
+    font-size: 0.78rem; font-weight: 600; color: rgba(255, 255, 255, 0.6);
+    text-decoration: underline; text-underline-offset: 3px; font-family: inherit;
+  }
+  .cc-link:hover { color: var(--cc-accent); }
+
+  .cc-list {
+    display: flex; flex-direction: column; gap: 0.6rem;
+    margin-bottom: 1.25rem; overflow-y: auto; max-height: 46vh; padding-right: 4px;
+  }
+  .cc-item {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    padding: 0.85rem 1rem; border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .cc-item-title { font-size: 0.85rem; font-weight: 700; margin: 0 0 0.2rem; }
+  .cc-item-desc { font-size: 0.75rem; line-height: 1.45; color: rgba(255, 255, 255, 0.6); margin: 0; }
+
+  .cc-switch { position: relative; display: inline-block; width: 42px; height: 24px; flex-shrink: 0; }
+  .cc-switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .cc-slider {
+    position: absolute; inset: 0; cursor: pointer; border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.2); transition: background .25s ease;
+  }
+  .cc-slider::before {
+    content: ""; position: absolute; height: 18px; width: 18px; left: 3px; top: 3px;
+    background: #fff; border-radius: 50%; transition: transform .25s ease;
+  }
+  .cc-switch input:checked + .cc-slider { background: var(--cc-accent); }
+  .cc-switch input:checked + .cc-slider::before { transform: translateX(18px); }
+  .cc-switch input:disabled + .cc-slider { opacity: 0.6; cursor: not-allowed; }
+  .cc-switch input:focus-visible + .cc-slider { outline: 2px solid var(--cc-accent); outline-offset: 2px; }
+</style>
+
+<script>
+  const COOKIE_NAME = "cookie-consent";
+  const COOKIE_DAYS = 365;
+
+  function setCookie(name: string, value: string, days: number) {
+    const d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${encodeURIComponent(value)}; Expires=${d.toUTCString()}; Path=/; SameSite=Lax; Secure`;
+  }
+
+  function getCookie(name: string): string | null {
+    const match = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([.$?*|{}()[\]\\/+^])/g, "\\$1") + "=([^;]*)"));
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  function deleteCookie(name: string) {
+    document.cookie = `${name}=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/`;
+  }
+
+  function applyPreferences(prefs: any) {
+    if (!prefs.analytics) {
+      deleteCookie("_ga");
+      deleteCookie("_gid");
+      document.cookie.split(";").forEach((c) => {
+        const n = c.split("=")[0].trim();
+        if (n.startsWith("_ga_")) deleteCookie(n);
+      });
+    }
+    if (!prefs.marketing) {
+      deleteCookie("_gcl_au");
+      deleteCookie("_fbp");
+      deleteCookie("_fbc");
+    }
+    document.dispatchEvent(new CustomEvent("cookie-consent-updated", { detail: prefs }));
+  }
+
+  function initCookieConsent() {
+    const root = document.getElementById("cookie-consent");
+    if (!root || (root as any).__ccInit) return;
+    (root as any).__ccInit = true;
+
+    const mainView = root.querySelector<HTMLElement>('[data-view="main"]')!;
+    const settingsView = root.querySelector<HTMLElement>('[data-view="settings"]')!;
+    const toggles = root.querySelectorAll<HTMLInputElement>("[data-cc-category]");
+
+    const readConsent = () => {
+      const raw = getCookie(COOKIE_NAME);
+      if (!raw) return null;
+      try {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === "object" && "necessary" in parsed) return parsed;
+        return null;
+      } catch {
+        return null;
+      }
+    };
+
+    const showBanner = () => {
+      root.hidden = false;
+      window.setTimeout(() => root.classList.add("cc-visible"), 1200);
+    };
+
+    const hideBanner = () => {
+      root.classList.remove("cc-visible");
+      window.setTimeout(() => { root.hidden = true; }, 500);
+    };
+
+    const showView = (name: string) => {
+      mainView.hidden = name !== "main";
+      settingsView.hidden = name !== "settings";
+    };
+
+    const save = (prefs: any) => {
+      setCookie(COOKIE_NAME, JSON.stringify(prefs), COOKIE_DAYS);
+      applyPreferences(prefs);
+      hideBanner();
+    };
+
+    root.addEventListener("click", (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLElement>("[data-cc-action]");
+      if (!btn) return;
+      const action = btn.dataset.ccAction;
+      if (action === "accept-all") {
+        save({ necessary: true, preferences: true, analytics: true, marketing: true });
+      } else if (action === "reject") {
+        save({ necessary: true, preferences: false, analytics: false, marketing: false });
+      } else if (action === "customize") {
+        const current = readConsent();
+        toggles.forEach((t) => {
+          const cat = t.dataset.ccCategory!;
+          if (cat !== "necessary") t.checked = current ? !!current[cat] : false;
+        });
+        showView("settings");
+      } else if (action === "back") {
+        showView("main");
+      } else if (action === "save") {
+        const prefs: any = { necessary: true };
+        toggles.forEach((t) => {
+          const cat = t.dataset.ccCategory!;
+          if (cat !== "necessary") prefs[cat] = t.checked;
+        });
+        save(prefs);
+      }
+    });
+
+    const consent = readConsent();
+    if (consent) {
+      applyPreferences(consent);
+    } else {
+      showView("main");
+      showBanner();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", initCookieConsent);
+  document.addEventListener("astro:page-load", initCookieConsent);
+</script>

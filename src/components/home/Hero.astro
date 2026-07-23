@@ -1,0 +1,120 @@
+---
+import { Phone, User, Building2, Mail, MessageSquare, ChevronDown, Send, CircleCheck } from 'lucide-astro';
+---
+<section id="contacto" class="relative pt-20 bg-[#0a0a1a] overflow-hidden">
+  <!-- Video de fondo -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover pointer-events-none"
+    src="/hero.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+  ></video>
+  <!-- Fondo decorativo -->
+  <div class="absolute inset-0 bg-[linear-gradient(135deg,#0a1230_0%,#0F2E65_55%,#0a1230_100%)]/85 mix-blend-multiply"></div>
+  <div class="absolute inset-0 bg-[#0a1230]/60"></div>
+  <!-- Overlay extra a la izquierda para contraste del texto -->
+  <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,18,48,0.92)_0%,rgba(10,18,48,0.6)_30%,rgba(10,18,48,0.2)_55%,transparent_75%)] pointer-events-none"></div>
+  <div class="absolute -top-24 -left-24 w-[420px] h-[420px] bg-[#2b59ff]/20 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute -bottom-24 right-0 w-[420px] h-[420px] bg-[#78BE20]/15 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0px); background-size: 38px 38px;"></div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Columna izquierda: texto -->
+      <div class="max-w-xl">
+        <p class="text-[#78BE20] text-sm font-semibold uppercase tracking-[0.15em] mb-4">Conectividad Empresarial</p>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.12] mb-6">
+          Lleva tu empresa al siguiente nivel con <span class="text-[#78BE20]">Conectividad Inteligente</span>
+        </h1>
+        <p class="text-white/75 text-base md:text-lg mb-10 leading-relaxed">
+          Internet dedicado, alta disponibilidad y ciberseguridad empresarial con monitoreo continuo — la red que tu empresa necesita para crecer sin interrupciones.
+        </p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="tel:8005200100" class="group inline-flex items-center gap-3 px-7 py-3.5 bg-[#78BE20] text-[#0F2E65] rounded-full text-sm font-bold hover:bg-[#6aad1a] transition-all duration-300 shadow-lg shadow-[#78BE20]/25">
+            <Phone class="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            Llámanos 800 520 0100
+          </a>
+          <a href="#soluciones" class="px-7 py-3.5 border-2 border-white/50 text-white rounded-full text-sm font-semibold hover:bg-white/10 hover:border-white transition-all duration-300">
+            Ver soluciones
+          </a>
+        </div>
+
+        <!-- Trust chips -->
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mt-10 pt-8 border-t border-white/10">
+          <div class="flex items-center gap-2 text-white/70 text-sm">
+            <CircleCheck class="w-4 h-4 text-[#78BE20]" />
+            <span>NOC propio 24/7</span>
+          </div>
+          <div class="flex items-center gap-2 text-white/70 text-sm">
+            <CircleCheck class="w-4 h-4 text-[#78BE20]" />
+            <span>Concesionario IFT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: formulario -->
+      <div class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl shadow-black/30">
+        <div class="mb-6">
+          <h2 class="text-[#0F2E65] text-2xl font-bold tracking-tight">Solicita tu propuesta</h2>
+          <p class="text-gray-500 text-sm mt-1">Te contactamos en menos de 24 horas hábiles.</p>
+        </div>
+        <form class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="relative">
+              <User class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="text" name="nombre" aria-label="Nombre completo" placeholder="Nombre completo" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+            <div class="relative">
+              <Building2 class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="text" name="empresa" aria-label="Empresa o giro" placeholder="Empresa o giro" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="relative">
+              <Phone class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="tel" name="telefono" aria-label="Teléfono o celular" placeholder="Teléfono / celular" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+            <div class="relative">
+              <Mail class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#78BE20]" />
+              <input required type="email" name="email" aria-label="Correo electrónico" placeholder="Correo electrónico" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400" />
+            </div>
+          </div>
+          <div class="relative">
+            <select required name="servicio" aria-label="Servicio de interés" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all appearance-none cursor-pointer pr-10">
+              <option value="">Servicio de interés</option>
+              <option value="internet-dedicado">Internet Dedicado</option>
+              <option value="alta-disponibilidad">Alta Disponibilidad</option>
+              <option value="internet-pyme">Internet Pyme</option>
+              <option value="redes-privadas-virtuales">Redes Privadas Virtuales</option>
+              <option value="internet-eventos">Internet para Eventos</option>
+              <option value="internet-satelital">Internet Satelital</option>
+              <option value="comunicaciones-unificadas">Comunicaciones Unificadas</option>
+              <option value="red-wifi">Red WiFi</option>
+              <option value="ciberseguridad">Ciberseguridad</option>
+              <option value="sd-wan">SD-WAN</option>
+              <option value="servicios-tic">Servicios TIC</option>
+              <option value="video-vigilancia">VideoVigilancia</option>
+              <option value="data-center">Data Center</option>
+              <option value="otro">Otro</option>
+            </select>
+            <ChevronDown class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+          </div>
+          <div class="relative">
+            <MessageSquare class="absolute left-3 top-3.5 w-4 h-4 text-[#78BE20]" />
+            <textarea name="mensaje" rows="3" aria-label="Mensaje" placeholder="Cuéntanos qué necesitas" class="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl pl-9 pr-3 py-3 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#78BE20]/30 focus:border-[#78BE20] transition-all placeholder:text-gray-400 resize-none"></textarea>
+          </div>
+          <button type="submit" class="group w-full inline-flex items-center justify-center gap-2 bg-[#0F2E65] text-white px-6 py-3.5 rounded-full text-sm font-bold hover:bg-[#0a1f45] hover:shadow-lg transition-all duration-300">
+            Solicitar propuesta
+            <Send class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+          <p class="text-gray-400 text-xs text-center">Tu información es confidencial.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
