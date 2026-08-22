@@ -218,10 +218,10 @@ const proceso = [
 
   <!-- Infraestructura y cobertura -->
   <section class="relative bg-[#F5F7FA] overflow-hidden">
-    <!-- Panel oscuro derecho con borde diagonal (desktop) — recorta el mapa y la etiqueta -->
-    <div class="hidden lg:block absolute inset-0 bg-[#060c1f] z-[1]" style="clip-path: polygon(52% 0, 100% 0, 100% 100%, 47% 100%, 51% 62%, 45% 35%)">
-      <img src="/MapaCobertura.webp" alt="Mapa de cobertura en México" class="absolute top-1/2 right-0 -translate-y-1/2 w-[50%] object-contain" />
-      <div class="absolute bottom-12 right-[6%] flex items-center gap-4">
+    <!-- Panel oscuro derecho con división recta (desktop) — recorta el mapa y la etiqueta -->
+    <div class="hidden lg:block absolute inset-0 bg-[#060c1f] z-[1]" style="clip-path: polygon(55% 0, 100% 0, 100% 100%, 55% 100%)">
+      <img src="/MapaCobertura.webp" alt="Mapa de cobertura en México" class="absolute left-[55%] right-0 top-0 bottom-0 w-auto h-full object-contain px-8 pt-8 pb-28" />
+      <div class="absolute bottom-10 right-[6%] flex items-center gap-4">
         <div class="w-14 h-14 rounded-full border border-[#78BE20]/30 bg-[#78BE20]/10 flex items-center justify-center flex-shrink-0">
           <Building2 class="w-6 h-6 text-[#78BE20]" />
         </div>
@@ -231,32 +231,30 @@ const proceso = [
         </div>
       </div>
     </div>
-    <!-- Línea verde diagonal (desktop) -->
-    <svg class="hidden lg:block absolute inset-0 w-full h-full z-[2] pointer-events-none" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
-      <polyline points="52,0 45,35 51,62 47,100" stroke="#78BE20" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
-    </svg>
+    <!-- Línea verde divisoria (desktop) -->
+    <div class="hidden lg:block absolute top-0 bottom-0 left-[55%] w-0.5 bg-[#78BE20] z-[2] pointer-events-none"></div>
 
     <!-- Contenido -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 lg:py-20">
-      <div class="lg:w-[40%]">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-14">
+      <div class="lg:w-[50%]">
         <p class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.2em]">Datos que nos respaldan</p>
-        <div class="w-10 h-1 bg-[#78BE20] mt-3 mb-5 rounded-full"></div>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.05] mb-4">
+        <div class="w-10 h-1 bg-[#78BE20] mt-3 mb-4 rounded-full"></div>
+        <h2 class="text-[1.75rem] md:text-[2rem] font-bold tracking-tight leading-[1.15] mb-3">
           <span class="text-[#0F2E65]">Infraestructura que </span><br class="hidden sm:block" /><span class="text-[#78BE20]">impulsa tu </span><span class="text-[#0F2E65]">operación.</span>
         </h2>
-        <p class="text-gray-500 text-sm leading-relaxed max-w-md mb-10">
+        <p class="text-gray-500 text-sm leading-relaxed max-w-lg mb-7">
           Contamos con infraestructura propia, alianzas estratégicas y capacidades que aseguran conectividad confiable, segura y de alto desempeño.
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-5 gap-y-10">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-7 gap-y-7">
           {infraestructura.map(({ Icon, title, desc }, i) => (
-            <div class={i % 3 === 0 ? '' : 'sm:border-l sm:border-gray-200 sm:pl-5'}>
-              <div class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center mb-4">
-                <Icon class="w-5 h-5 text-[#0F2E65]" strokeWidth={1.6} />
+            <div class={i % 3 === 0 ? '' : 'sm:border-l sm:border-gray-200 sm:pl-7'}>
+              <div class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mb-3">
+                <Icon class="w-4.5 h-4.5 text-[#0F2E65]" strokeWidth={1.6} />
               </div>
-              <h3 class="text-[#0F2E65] text-base font-bold leading-tight mb-2">{title}</h3>
-              <div class="w-7 h-0.5 bg-[#78BE20] mb-3 rounded-full"></div>
-              <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              <h3 class="text-[#0F2E65] text-[0.95rem] font-bold leading-snug mb-2">{title}</h3>
+              <div class="w-7 h-0.5 bg-[#78BE20] mb-2.5 rounded-full"></div>
+              <p class="text-gray-500 text-[0.8125rem] leading-[1.55]">{desc}</p>
             </div>
           ))}
         </div>
@@ -319,7 +317,7 @@ const proceso = [
                 </div>
                 <h3 class="text-[#0F2E65] font-bold text-base mb-3 uppercase tracking-wide leading-snug min-h-[2.75rem]">{title}</h3>
                 <div class="w-8 h-0.5 mx-auto mb-5 rounded-full" style={`background:${color}`}></div>
-                <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                <p class="text-gray-500 text-[0.8125rem] leading-[1.55]">{desc}</p>
               </div>
             </div>
           ))}

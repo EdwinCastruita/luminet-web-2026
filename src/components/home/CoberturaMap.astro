@@ -1,0 +1,177 @@
+---
+import { MapPin, Radio, Building2, Cable } from 'lucide-astro';
+import { estadosMexico } from '../../data/mexico-states';
+import { coberturaEstados } from '../../data/cobertura';
+
+const estados = estadosMexico.map((e) => {
+  const clave = e.id.replace('-', '');
+  return { ...e, clave, cobertura: coberturaEstados[clave] };
+});
+
+const conCobertura = estados.filter((e) => e.cobertura);
+const totalMunicipios = conCobertura.reduce(
+  (n, e) => n + e.cobertura!.municipalities.length,
+  0,
+);
+
+const datos = [
+  { Icon: Building2, valor: String(conCobertura.length), label: 'Estados con cobertura' },
+  { Icon: Radio, valor: `${totalMunicipios}+`, label: 'Municipios atendidos' },
+  { Icon: Cable, valor: 'Fibra + MW', label: 'Fibra óptica y microonda' },
+];
+---
+<section id="cobertura" class="relative bg-white py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-1 bg-[#78BE20] rounded-full"></div>
+        <p class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.2em]">Mapa de cobertura</p>
+      </div>
+      <h2 class="text-[#0F2E65] text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-5">
+        Conectividad donde <span class="text-[#78BE20]">tu operación crece</span>
+      </h2>
+      <p class="text-gray-500 text-base leading-relaxed max-w-lg mb-8">
+        Combinamos fibra óptica y enlaces de microonda con infraestructura propia. Toca un estado del mapa para ver los municipios con cobertura.
+      </p>
+
+      <div class="border border-gray-200 rounded-2xl px-5 py-5 mb-8 bg-[#F8FAFC] min-h-[168px]">
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-[0.15em] mb-1">Estado seleccionado</p>
+        <p id="cobertura-estado" class="text-[#0F2E65] text-xl font-bold leading-tight">Selecciona un estado</p>
+        <p id="cobertura-status" class="text-sm font-semibold mt-1 text-gray-400">
+          Los estados en verde cuentan con cobertura Luminet.
+        </p>
+        <div id="cobertura-municipios" class="flex flex-wrap gap-2 mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {datos.map(({ Icon, valor, label }) => (
+          <div class="bg-[#F8FAFC] border border-gray-200 rounded-2xl px-5 py-5">
+            <Icon class="w-5 h-5 text-[#78BE20] mb-3" strokeWidth={1.8} />
+            <p class="text-[#0F2E65] text-2xl font-bold leading-none">{valor}</p>
+            <p class="text-gray-500 text-sm mt-2 leading-tight">{label}</p>
+          </div>
+        ))}
+      </div>
+
+      <a href="#contacto" class="mt-8 inline-flex items-center gap-2 bg-[#78BE20] text-[#0F2E65] px-6 py-3 rounded-full text-sm font-bold hover:bg-[#6aad1a] transition-colors">
+        <MapPin class="w-4 h-4" />
+        Consulta cobertura en tu zona
+      </a>
+    </div>
+
+    <div class="relative">
+      <svg
+        id="mapa-mexico"
+        viewBox="0 0 1000 620"
+        class="w-full h-auto"
+        role="img"
+        aria-label="Mapa interactivo de cobertura de Luminet en México"
+      >
+        {estados.map(({ id, clave, name, d, cobertura }) => (
+          <path
+            d={d}
+            id={`estado-${id}`}
+            data-estado={name}
+            data-clave={clave}
+            tabindex="0"
+            role="button"
+            aria-label={cobertura
+              ? `${name} — cobertura disponible en ${cobertura.municipalities.length} municipios`
+              : `${name} — sin cobertura actualmente`}
+            class:list={['estado', cobertura && 'con-cobertura']}
+          >
+            <title>{cobertura ? `${name} — Cobertura disponible` : `${name} — Próximamente`}</title>
+          </path>
+        ))}
+      </svg>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-2 justify-center mt-4">
+        <span class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-[#78BE20]"></span>
+          <span class="text-gray-500 text-sm">Con cobertura</span>
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-gray-300"></span>
+          <span class="text-gray-500 text-sm">Próximamente</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #mapa-mexico .estado {
+    fill: #E2E8F0;
+    stroke: #ffffff;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+    transition: fill 0.25s ease, fill-opacity 0.25s ease, stroke 0.25s ease;
+    outline: none;
+  }
+  #mapa-mexico .estado.con-cobertura {
+    fill: #78BE20;
+    fill-opacity: 0.55;
+    cursor: pointer;
+  }
+  #mapa-mexico .estado.con-cobertura:hover,
+  #mapa-mexico .estado.con-cobertura:focus-visible {
+    fill-opacity: 0.85;
+  }
+  #mapa-mexico .estado.con-cobertura.activo {
+    fill-opacity: 1;
+    stroke: #0F2E65;
+    stroke-width: 2;
+  }
+  #mapa-mexico .estado:not(.con-cobertura) {
+    cursor: default;
+  }
+  #mapa-mexico .estado:not(.con-cobertura):hover {
+    fill: #CBD5E1;
+  }
+</style>
+
+<script>
+  import { coberturaEstados } from '../../data/cobertura';
+
+  const svg = document.getElementById('mapa-mexico');
+  const nombre = document.getElementById('cobertura-estado');
+  const status = document.getElementById('cobertura-status');
+  const lista = document.getElementById('cobertura-municipios');
+
+  if (svg && nombre && status && lista) {
+    const paths = svg.querySelectorAll<SVGPathElement>('.estado');
+
+    const seleccionar = (el: SVGPathElement) => {
+      paths.forEach((p) => p.classList.remove('activo'));
+      const datos = coberturaEstados[el.dataset.clave ?? ''];
+      nombre.textContent = el.dataset.estado ?? '';
+      lista.innerHTML = '';
+
+      if (datos) {
+        el.classList.add('activo');
+        status.textContent = `Cobertura disponible · ${datos.municipalities.length} municipios`;
+        status.className = 'text-sm font-semibold mt-1 text-[#78BE20]';
+        for (const m of datos.municipalities) {
+          const chip = document.createElement('span');
+          chip.className =
+            'bg-white border border-gray-200 text-[#0F2E65] text-xs font-medium px-2.5 py-1 rounded-full';
+          chip.textContent = m;
+          lista.appendChild(chip);
+        }
+      } else {
+        status.textContent = 'Próximamente — sin infraestructura propia en este estado.';
+        status.className = 'text-sm font-semibold mt-1 text-gray-400';
+      }
+    };
+
+    paths.forEach((el) => {
+      el.addEventListener('click', () => seleccionar(el));
+      el.addEventListener('focus', () => seleccionar(el));
+      el.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          seleccionar(el);
+        }
+      });
+    });
+  }
+</script>

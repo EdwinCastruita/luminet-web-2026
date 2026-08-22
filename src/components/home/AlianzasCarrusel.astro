@@ -1,0 +1,31 @@
+---
+const topRow = Array.from({ length: 11 }, (_, i) => i + 1);
+const bottomRow = Array.from({ length: 10 }, (_, i) => i + 12);
+const fadeMask = "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)";
+---
+
+<!-- Fila 1: izquierda → derecha -->
+<div class="overflow-hidden py-3" style={`-webkit-mask-image:${fadeMask};mask-image:${fadeMask};`} aria-hidden="true">
+  <div class="alianzas-track alianzas-rtl flex flex-row flex-nowrap w-max gap-6">
+    {[...topRow, ...topRow].map((n) => (
+      <div class="flex-none w-[220px] h-[150px] bg-white flex items-center justify-center rounded-[15px] border border-[#e2e8f0] p-4 transition-shadow duration-300 hover:shadow-lg">
+        <img src={`/nuestrasAlianzas/${n}.webp`} alt={`Alianza ${n}`} width="220" height="150" loading="lazy" decoding="async" class="w-full h-full object-contain" />
+      </div>
+    ))}
+  </div>
+</div>
+
+<!-- Fila 2: derecha → izquierda -->
+<div class="overflow-hidden py-3 mt-4" style={`-webkit-mask-image:${fadeMask};mask-image:${fadeMask};`} aria-hidden="true">
+  <div class="alianzas-track alianzas-ltr flex flex-row flex-nowrap w-max gap-6">
+    {[...bottomRow, ...bottomRow].map((n) => (
+      <div class="flex-none w-[220px] h-[150px] bg-white flex items-center justify-center rounded-[15px] border border-[#e2e8f0] p-4 transition-shadow duration-300 hover:shadow-lg">
+        <img src={`/nuestrasAlianzas/${n}.webp`} alt={`Alianza ${n}`} width="220" height="150" loading="lazy" decoding="async" class="w-full h-full object-contain" />
+      </div>
+    ))}
+  </div>
+</div>
+
+<ul class="sr-only">
+  {[...topRow, ...bottomRow].map((n) => (<li>Alianza {n}</li>))}
+</ul>
