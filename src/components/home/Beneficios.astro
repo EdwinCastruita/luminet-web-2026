@@ -1,63 +1,60 @@
 ---
-import { Network, Zap, Award, Gauge, Clock, Shield } from 'lucide-astro';
+import { ShieldCheck, Clock, Headset, Network, Gauge } from 'lucide-astro';
 
 const beneficios = [
   {
-    Icon: Award,
-    title: 'Infraestructura Tier 1',
-    desc: 'Conexión directa con proveedores Tier 1 para garantizar estabilidad y baja latencia en cada enlace.',
-    badge: 'Tier 1',
+    Icon: ShieldCheck,
+    valor: '99.95%',
+    title: 'SLA garantizado',
+    desc: 'Acuerdos de nivel de servicio con disponibilidad comprometida por contrato.',
+  },
+  {
+    Icon: Clock,
+    valor: '24/7',
+    title: 'Monitoreo',
+    desc: 'Vigilancia proactiva de tu red los 365 días del año, sin ventanas ciegas.',
+  },
+  {
+    Icon: Headset,
+    valor: 'NOC',
+    title: 'Soporte Técnico',
+    desc: 'Centro de Operaciones de Red propio, con ingenieros especializados en cada incidencia.',
   },
   {
     Icon: Network,
+    valor: 'IFT',
     title: 'Concesionario Federal',
     desc: 'Uno de los primeros concesionarios federales en telecomunicaciones con infraestructura inalámbrica propia.',
   },
   {
-    Icon: Zap,
-    title: 'Entrega por Microonda y Fibra Óptica',
-    desc: 'Combinamos ambas tecnologías para adaptar la conexión a cada sitio, sin depender de una sola vía.',
-  },
-  {
-    Icon: Clock,
-    title: 'Monitoreo Proactivo (24/7 en circulo verde)',
-    desc: 'Centro de Operaciones de Red propio, con ingenieros disponibles todo el año.',
-  },
-  {
     Icon: Gauge,
+    valor: 'IA',
     title: 'Inteligencia Artificial',
     desc: 'Anticipamos fallas y protegemos tu red con inteligencia artificial aplicada en tiempo real.',
   },
-  {
-    Icon: Shield,
-    title: 'Escalabilidad',
-    desc: 'Tu red crece contigo: por sitio, por usuario o por demanda, sin fricción.',
-  },
 ];
 ---
-<section class="bg-[#F8FAFC] py-24 px-4 sm:px-6 lg:px-8">
+<section id="beneficios" class="bg-white py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16">
+    <div class="text-center mb-14">
       <div class="inline-flex items-center gap-2 bg-[#78BE20]/10 border border-[#78BE20]/20 rounded-full px-4 py-1.5 mb-4">
-        <span class="w-2 h-2 bg-[#78BE20] rounded-full animate-pulse"></span>
-        <p class="text-[#78BE20] text-sm font-bold uppercase tracking-[0.12em]">Por qué elegirnos</p>
+        <span class="w-2 h-2 bg-[#78BE20] rounded-full"></span>
+        <p class="text-[#78BE20] text-sm font-bold uppercase tracking-[0.12em]">Beneficios</p>
       </div>
-      <h2 class="text-[#0F2E65] text-3xl md:text-5xl font-bold tracking-tight">"La razón detrás de cada conexión"</h2>
+      <h2 class="text-[#0F2E65] text-3xl md:text-5xl font-bold tracking-tight">Continuidad garantizada</h2>
       <div class="w-16 h-1 bg-[#78BE20] mx-auto mt-6 rounded-full"></div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {beneficios.map(({ Icon, title, desc, badge }) => (
-        <div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 ease-out hover:-translate-y-1">
-          <div class="absolute top-0 left-8 right-8 h-1 bg-[#78BE20] rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="mb-5">
-            <div class="w-14 h-14 bg-[#0F2E65]/5 rounded-xl flex items-center justify-center group-hover:bg-[#78BE20]/10 transition-colors duration-500">
-              <Icon class="w-7 h-7 text-[#0F2E65] group-hover:text-[#78BE20] transition-colors duration-500" />
+
+    <div class="flex flex-wrap justify-center gap-8">
+      {beneficios.map(({ Icon, valor, title, desc }) => (
+        <div class="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)] bg-[#F8FAFC] border border-gray-200 rounded-2xl p-8 hover:border-[#78BE20]/40 hover:shadow-xl transition-all duration-500 ease-out hover:-translate-y-1">
+          <div class="flex items-start justify-between mb-5">
+            <div class="w-14 h-14 bg-white rounded-xl border border-gray-200 flex items-center justify-center group-hover:border-[#78BE20]/40 transition-colors duration-500">
+              <Icon class="w-7 h-7 text-[#0F2E65] group-hover:text-[#78BE20] transition-colors duration-500" strokeWidth={1.7} />
             </div>
+            <span class="bg-[#78BE20] text-[#0F2E65] text-sm font-bold px-3 py-1 rounded-full">{valor}</span>
           </div>
-          <div class="flex items-center gap-2 mb-3">
-            <h3 class="text-[#0F2E65] text-lg font-bold leading-tight">{title}</h3>
-            {badge && <span class="bg-[#78BE20] text-[#0F2E65] text-xs font-bold px-2.5 py-1 rounded-full">{badge}</span>}
-          </div>
+          <h3 class="text-[#0F2E65] text-xl font-bold leading-tight mb-3">{title}</h3>
           <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
         </div>
       ))}
