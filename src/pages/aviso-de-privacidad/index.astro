@@ -1,0 +1,423 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const lastUpdate = '31 de agosto de 2026';
+
+const sections = [
+  { id: 'datos-recabados', title: 'Datos personales recabados' },
+  { id: 'datos-sensibles', title: 'Datos personales sensibles' },
+  { id: 'finalidades', title: 'Finalidades' },
+  { id: 'cookies', title: 'Uso de cookies' },
+  { id: 'redes-sociales', title: 'Redes sociales' },
+  { id: 'transferencia', title: 'Transferencia de datos personales' },
+  { id: 'derechos-arco', title: 'Ejercicio de derechos ARCO' },
+  { id: 'revocacion', title: 'Revocación del consentimiento' },
+  { id: 'limitaciones', title: 'Limitaciones de uso y divulgación' },
+  { id: 'seguridad', title: 'Medidas de seguridad' },
+  { id: 'modificaciones', title: 'Modificaciones al aviso' },
+];
+---
+
+<Layout title="Aviso de Privacidad - Luminet">
+  <section class="bg-[#0F2E65] pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-[#78BE20] text-xs font-bold uppercase tracking-[0.15em] mb-3">
+        LUMINET WAN S.A. DE C.V.
+      </p>
+      <h1 class="text-white text-3xl md:text-5xl font-bold tracking-tight mb-4">
+        Aviso de Privacidad
+      </h1>
+      <p class="text-white/70 text-sm md:text-base leading-relaxed">
+        www.luminet.com.mx &middot; Última actualización: {lastUpdate}
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <nav class="bg-[#0F2E65]/5 border border-[#0F2E65]/10 rounded-2xl p-6 mb-14">
+        <h2 class="text-[#0F2E65] font-bold text-sm uppercase tracking-[0.08em] mb-4">Contenido</h2>
+        <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2">
+          {sections.map((s) => (
+            <li>
+              <a href={`#${s.id}`} class="text-[#0F2E65]/70 text-sm hover:text-[#78BE20] transition-colors">
+                {s.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div class="legal-content">
+        <p>
+          Para <strong>LUMINET WAN S.A. DE C.V.</strong>, quien tiene como objeto desarrollar
+          actividades y prestar servicios de telecomunicaciones, la protección de sus datos
+          personales es muy importante, es por eso que ponemos a su disposición el presente Aviso de
+          Privacidad con la intención de que pueda conocer la información de carácter personal que
+          tratamos al momento de contactarse con nosotros o solicitar información sobre nuestros
+          servicios por medio de nuestro dominio web, así como para que pueda conocer el proceso en
+          caso de que desee ejercer sus derechos de Acceso, Rectificación, Cancelación y Oposición
+          (ARCO).
+        </p>
+        <p>
+          Para LUMINET WAN S.A. DE C.V., a quien en lo sucesivo se le denominará
+          <strong>“EL RESPONSABLE”</strong>, quien es una sociedad mercantil legalmente constituida
+          con domicilio en Blvd. Nazario Ortiz Garza, No. 2060, Int. 319-A, Tanque de Peña, Saltillo,
+          Coahuila, la protección de sus datos personales es una prioridad. Por ello, en cumplimiento
+          de lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los
+          Particulares y su Reglamento, le informamos que será RESPONSABLE del tratamiento de sus
+          datos personales. Asimismo, ponemos a su disposición el presente Aviso de Privacidad para
+          informarle sobre la forma en que recabamos, utilizamos, protegemos y, en su caso,
+          transferimos sus datos personales, así como los mecanismos para ejercer tus derechos de
+          Acceso, Rectificación, Cancelación y Oposición (ARCO).
+        </p>
+
+        <h2 id="datos-recabados">Datos personales recabados</h2>
+        <p>
+          Al momento de que desee comunicarse con nosotros a través del formato disponible en nuestro
+          dominio web y/o chateando a través de nuestro WhatsApp ubicado para recibir más información
+          sobre nuestros servicios, se le solicitarán los siguientes datos personales:
+        </p>
+        <ul>
+          <li>Nombre completo</li>
+          <li>Compañía o giro</li>
+          <li>Número de teléfono</li>
+          <li>Correo electrónico</li>
+        </ul>
+        <p>
+          Para la oferta y/o contrato de nuestros servicios, recabamos las siguientes categorías de
+          datos personales:
+        </p>
+        <ul>
+          <li>Nombre completo</li>
+          <li>Domicilio del contratante</li>
+          <li>Domicilio donde se prestará el servicio</li>
+          <li>Número de teléfono</li>
+          <li>Correo electrónico</li>
+          <li>Registro Federal del Contribuyente (RFC)</li>
+          <li>
+            Número de cuenta bancaria o, en caso de ser domiciliado el pago, datos de la tarjeta de
+            crédito.
+          </li>
+        </ul>
+        <p>
+          Asimismo, llevaremos a cabo el tratamiento de los datos personales que se desprenden de los
+          siguientes documentos:
+        </p>
+        <h3>Para personas morales</h3>
+        <ul>
+          <li>Acta Constitutiva de la empresa</li>
+          <li>Poder Notarial</li>
+          <li>
+            Identificación oficial vigente (INE o pasaporte) del representante legal y/o apoderado
+            legal.
+          </li>
+          <li>Comprobante de domicilio de la empresa.</li>
+          <li>
+            Copia del comprobante de domicilio donde se prestará el servicio (en caso de ser diferente
+            al de contratación)
+          </li>
+          <li>Constancia de Situación Fiscal</li>
+        </ul>
+        <h3>Para personas físicas</h3>
+        <ul>
+          <li>
+            Identificación oficial vigente (INE o pasaporte) del titular o de un representante del
+            titular.
+          </li>
+          <li>Constancia de Situación Fiscal</li>
+          <li>Comprobante de domicilio</li>
+        </ul>
+        <p>
+          En caso de que sea su deseo ejercer su derecho de Acceso, Rectificación, Cancelación y
+          Oposición del tratamiento de su información personal, adicionalmente le solicitaremos una
+          copia de su identificación oficial o poder notarial y credencial de identificación oficial
+          de su representante, con la finalidad de identificarle y tener la certeza de que quien
+          solicita el ejercicio de los derechos ARCO sea usted o su representante legal.
+        </p>
+
+        <h2 id="datos-sensibles">Datos personales sensibles</h2>
+        <p>
+          Le informamos que EL RESPONSABLE no recaba, solicita ni trata datos personales de los
+          denominados sensibles a través de sus sitios web, formularios electrónicos, medios de
+          contacto oficiales o cualquier otro canal habilitado para la prestación de sus servicios.
+        </p>
+
+        <h2 id="finalidades">Finalidades</h2>
+        <p>
+          Los datos personales que recabamos cuando se comunica con nosotros para solicitar
+          información sobre nuestros servicios, a través de nuestro sitio web, medios de contacto
+          autorizados, o bien, al solicitar una cotización, propuesta comercial o la contratación de
+          nuestros servicios, serán tratados para las siguientes finalidades:
+        </p>
+        <h3>Finalidades primarias</h3>
+        <ul>
+          <li>Otorgar los servicios de telecomunicaciones.</li>
+          <li>Verificar su identidad.</li>
+          <li>Validar la personalidad de la persona moral e identidad del representante legal.</li>
+          <li>
+            Contactarlo para concluir el proceso de formalización del Contrato de Servicios por EL
+            RESPONSABLE.
+          </li>
+          <li>
+            Cumplir con las obligaciones y ejercer los derechos derivados de la relación jurídica
+            entablada entre EL RESPONSABLE y usted.
+          </li>
+          <li>Realizar cargos relacionados con su pago de los servicios adquiridos.</li>
+          <li>
+            Realizar consultas, investigaciones con relación a cualquier queja o reclamación por los
+            servicios de EL RESPONSABLE.
+          </li>
+          <li>
+            Hacer la entrega de tickets y facturación, asimismo como realizar gestiones de cobranza.
+          </li>
+          <li>Realizar la instalación de la infraestructura requerida para la prestación del servicio.</li>
+          <li>Gestionar cambios de domicilio, modificaciones del servicio o reubicación de equipos.</li>
+          <li>Atender solicitudes de soporte técnico, mantenimiento y reparación del servicio.</li>
+          <li>
+            Envío de información sobre incidencias, actualizaciones o suspensiones relacionadas con el
+            servicio.
+          </li>
+          <li>
+            Cumplir obligaciones legales, regulatorias y requerimientos de autoridades competentes.
+          </li>
+          <li>
+            Realizar gestiones con el propósito de que los Datos Personales en todo momento sean
+            exactos, completos, pertinentes, correctos y actualizados en cumplimiento al principio de
+            calidad estatuido por la LFPDPPP.
+          </li>
+        </ul>
+        <h3>Finalidades secundarias</h3>
+        <ul>
+          <li>
+            Envío de información y comunicados relacionados con mensajes promocionales, comunicados
+            con fines mercadotécnicos, publicitarios y de prospección comercial sobre servicios nuevos
+            o existentes, ofertas comerciales sobre productos y/o servicios comercializados por EL
+            RESPONSABLE y/o socios comerciales del mismo.
+          </li>
+          <li>
+            Levantamiento de encuestas de satisfacción, aplicar encuestas, estudios de mercado e
+            información que nos permita evaluar la calidad de los productos y/o servicios.
+          </li>
+          <li>
+            Elaborar perfiles relacionados con los hábitos de consumo de los clientes y usuarios de
+            los servicios y/o productos que ofrece EL RESPONSABLE.
+          </li>
+        </ul>
+
+        <h2 id="cookies">Uso de cookies</h2>
+        <p>
+          Contamos con cookies dentro de nuestra página web en donde ofrecemos nuestros servicios.
+          Esta información nos sirve para ayudarle a mantener su sesión como usuario en el navegador
+          web de su preferencia, además de las cookies necesarias para marketing digital de empresas
+          como Google Analytics y Facebook Pixel. Si desea conocer más acerca del concepto de las
+          cookies, le invitamos a consultar el siguiente enlace:
+          <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer">
+            www.allaboutcookies.org</a
+          >.
+        </p>
+
+        <h2 id="redes-sociales">Redes sociales</h2>
+        <p>
+          Le informamos que EL RESPONSABLE cuenta con los siguientes perfiles en redes sociales, que
+          son administrados por su equipo.
+        </p>
+        <ul>
+          <li>Facebook: @Luminet Mx</li>
+          <li>Instagram: @luminet_mx</li>
+          <li>LinkedIn: @Luminet Oficial</li>
+        </ul>
+
+        <h2 id="transferencia">Transferencia de datos personales</h2>
+        <p>
+          Le informamos que EL RESPONSABLE hace transferencia de su información personal hacia el
+          Servicio de Administración Tributaria y a sus entidades certificadoras, con la finalidad de
+          generar la factura que usted solicite, para lo cual no requeriremos de su consentimiento de
+          acuerdo con lo establecido en el Artículo 36 Fracción I de la Ley de Protección de Datos
+          Personales en Posesión de los Particulares.
+        </p>
+        <p>
+          De igual forma, realizamos transferencia de sus datos personales a empresas filiales
+          subsidiarias del mismo grupo, por lo que tampoco requerimos de su consentimiento de acuerdo
+          con lo establecido en el artículo 36 fracciones III y IV de la Ley de Protección de Datos
+          Personales en Posesión de los Particulares.
+        </p>
+
+        <h2 id="derechos-arco">Ejercicio de derechos ARCO</h2>
+        <p>
+          En los casos legalmente procedentes, podrá ejercer en el momento que desee sus derechos para
+          Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales, a través de
+          los procedimientos que hemos implementado para tal efecto.
+        </p>
+        <p>
+          La solicitud correspondiente podrá formularla mediante escrito dirigido a EL RESPONSABLE, a
+          través del correo electrónico
+          <a href="mailto:arco@luminet.com.mx">arco@luminet.com.mx</a>.
+        </p>
+        <p>
+          La solicitud deberá contener y acompañar los siguientes requisitos establecidos en la
+          legislación aplicable vigente:
+        </p>
+        <ul>
+          <li>Su nombre y domicilio u otro medio para comunicar la respuesta a su solicitud.</li>
+          <li>
+            Los documentos que acrediten su identidad o, según sea el caso, la representación legal.
+          </li>
+          <li>
+            La descripción clara y precisa de los datos personales respecto de los que se busca ejercer
+            alguno de los Derechos ARCO; y
+          </li>
+          <li>
+            La descripción del derecho ARCO que se pretende ejercer, o bien, lo que solicita la persona
+            titular.
+          </li>
+          <li>Cualquier otro elemento o documento que facilite la localización de los datos personales.</li>
+        </ul>
+        <p>
+          En el caso de que la solicitud sea para el ejercicio de acceso a sus datos personales, se le
+          entregarán previa acreditación de su identidad.
+        </p>
+        <p>
+          En caso de que la solicitud sea con relación al ejercicio de rectificación de datos
+          personales, deberá indicar, además de lo establecido en supralíneas, las modificaciones a
+          realizarse y aportar la documentación que sustente su petición.
+        </p>
+        <p>
+          Le comunicaremos, en un plazo máximo de veinte días hábiles contados desde la fecha en que
+          recibamos su solicitud, la determinación adoptada. Si la solicitud resulta procedente, ésta
+          se hará efectiva dentro de los quince días hábiles siguientes a la fecha en que EL
+          RESPONSABLE le comunique la respuesta. Ahora bien, en el supuesto de que la información
+          proporcionada en su solicitud resulte errónea o insuficiente, o no se acompañen los
+          documentos necesarios para acreditar su identidad o la de su representante legal, EL
+          RESPONSABLE, dentro de los cinco días hábiles siguientes a la recepción de su solicitud,
+          requerirá la subsanación de las deficiencias para poder dar trámite a su solicitud. En estos
+          casos, contará con diez días hábiles para atender el requerimiento de subsanación, contados
+          a partir del día siguiente en que hubiere recibido dicho requerimiento. La solicitud
+          correspondiente se tendrá por no presentada si no responde dentro de dicho plazo.
+        </p>
+        <p>
+          Podrá obtener el ejercicio de derechos ARCO solicitado a través de copias simples, documentos
+          electrónicos en formatos convencionales (Word, PDF, etc.), o a través de cualquier otro medio
+          legítimo que garantice y acredite el ejercicio efectivo de su derecho.
+        </p>
+        <p>
+          Es importante mencionar que solamente usted será responsable de mantener actualizados sus
+          datos personales en posesión de EL RESPONSABLE para poder brindar el servicio que se merece.
+          Por lo anterior, al momento de usar la plataforma garantiza y responde, en cualquier caso, de
+          la veracidad, exactitud, vigencia y autenticidad de los datos personales facilitados, y se
+          compromete a mantenerlos debidamente actualizados, comunicando cualquier cambio a EL
+          RESPONSABLE.
+        </p>
+
+        <h2 id="revocacion">Revocación del consentimiento</h2>
+        <p>
+          Usted podrá revocar su consentimiento para el tratamiento de sus datos personales, sin
+          efectos retroactivos, en todos aquellos casos en que dicha revocación no suponga la
+          imposibilidad de cumplir obligaciones derivadas de una relación jurídica vigente entre usted
+          y EL RESPONSABLE.
+        </p>
+        <p>
+          El procedimiento para la revocación del consentimiento, en su caso, será el mismo que el que
+          hemos establecido en el apartado inmediato anterior para el ejercicio de sus derechos ARCO.
+        </p>
+
+        <h2 id="limitaciones">Limitaciones sobre el uso y divulgación de sus datos personales</h2>
+        <p>
+          De igual forma, podrá también limitar el uso o divulgación de sus datos personales dirigiendo
+          la solicitud correspondiente a EL RESPONSABLE de Datos Personales o Entidad Cubierta en la
+          dirección de correo electrónico
+          <a href="mailto:arco@luminet.com.mx">arco@luminet.com.mx</a>. Los requisitos para acreditar
+          su identidad, así como el procedimiento para atender su solicitud serán los mismos que los
+          señalados en el apartado “Ejercicio de derechos ARCO”.
+        </p>
+        <p>
+          Le informamos que EL RESPONSABLE cuenta con medios y procedimientos para asegurar la
+          inclusión de algunos de sus datos en listados de exclusión propios, cuando usted solicite su
+          inclusión en ellos de forma expresa. EL RESPONSABLE le otorgará la constancia de inscripción
+          correspondiente, si así lo solicita.
+        </p>
+
+        <h2 id="seguridad">Medidas de seguridad</h2>
+        <p>
+          Debido a que para nosotros es muy importante la protección de sus datos personales, le
+          informamos que EL RESPONSABLE hace esfuerzos y ejercicios continuos para cumplir con las
+          medidas técnicas, administrativas y físicas para el cuidado de su información personal en
+          contra de daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no
+          autorizado.
+        </p>
+
+        <h2 id="modificaciones">Modificaciones al aviso de privacidad</h2>
+        <p>
+          Podremos modificar, actualizar, extender o de cualquier otra forma cambiar el contenido y
+          alcance de nuestro aviso de privacidad, en cualquier momento y bajo nuestra completa
+          discreción. En tales casos, publicaremos dichos cambios en nuestra página de internet
+          www.luminet.com.mx además de informárselo por medio de los canales de comunicación con los
+          que contemos.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-content {
+    color: #33415580;
+    color: rgba(15, 46, 101, 0.78);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  .legal-content h2 {
+    scroll-margin-top: 6rem;
+    color: #0f2e65;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 3rem 0 1rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(15, 46, 101, 0.1);
+  }
+  .legal-content h3 {
+    color: #0f2e65;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+  }
+  .legal-content p {
+    margin: 0 0 1.15rem;
+    text-align: justify;
+  }
+  .legal-content ul {
+    margin: 0 0 1.5rem;
+    padding-left: 1.25rem;
+    list-style: none;
+  }
+  .legal-content li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .legal-content li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: #78be20;
+  }
+  .legal-content strong {
+    color: #0f2e65;
+    font-weight: 700;
+  }
+  .legal-content a {
+    color: #0f2e65;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: #78be20;
+  }
+  .legal-content a:hover {
+    color: #78be20;
+  }
+</style>
