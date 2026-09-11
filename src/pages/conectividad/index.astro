@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import { Headphones, ShieldCheck, RadioTower, Award, MapPin, Building2, Code2 } from 'lucide-astro';
 
+const descripcion = 'Soluciones de conectividad para dependencias y organizaciones: internet dedicado, enlaces de alta disponibilidad, servicios administrados y proyectos a la medida, sobre infraestructura propia de fibra óptica y microonda con soporte 24/7.';
+
 const diferenciadores = [
   { Icon: ShieldCheck, text: 'Empresa concesionada y regulada por el IFT' },
   { Icon: RadioTower, text: 'Operador de enlaces en microondas más grande de México' },
@@ -20,7 +22,11 @@ const solutions = [
 ];
 ---
 
-<Layout title="Conectividad - Luminet">
+<Layout
+  title="Conectividad - Luminet"
+  description={descripcion}
+  service={{ name: 'Conectividad', description: descripcion, serviceType: 'Conectividad empresarial y gubernamental' }}
+>
   <section class="conectividad-hero">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-container">
       <h1 class="animate-fade-in">Conectividad</h1>

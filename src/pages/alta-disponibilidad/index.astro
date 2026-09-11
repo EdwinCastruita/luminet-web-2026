@@ -52,7 +52,11 @@ const casos = [
 ];
 ---
 
-<Layout title={`${titulo} - Luminet`}>
+<Layout
+  title={`${titulo} - Luminet`}
+  description={descripcion}
+  service={{ name: titulo, description: descripcion }}
+>
   <!-- HERO con formulario -->
   <section class="sol-hero">
     <img class="sol-hero-bg" src="/assets/asset_1.jpg" alt="" />
